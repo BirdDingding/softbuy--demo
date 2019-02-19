@@ -1,0 +1,221 @@
+@import '../less/_base.less';
+// 头部区域
+#header{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #f7f7f7;
+    .title{
+        display: flex;
+        text-align: center;
+        background-color: #e4393c;
+        .left{
+            width: .4rem;
+            font-size: .2rem;
+            color: #fff;
+            line-height: .44rem;
+        }
+        .center{
+            flex: 1;
+            font-size: .2rem;
+            color: #fff;
+            line-height: .44rem;
+        }
+        .right{
+            width: .4rem;
+            display: block;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    // 导航栏区域
+    #nav {
+        position: relative;
+        height: .48rem;
+        background-color: #f7f7f7;
+        z-index: 999;
+
+        .mui-scroll {
+            width: 8.8rem;
+            display: block;
+
+            ul {
+                background-color: #fff;
+                height: .38rem;
+
+                li {
+                    list-style: none;
+                    float: left;
+                    height: .38rem;
+                    font-size: .14rem;
+
+                    &.active {
+                        border-bottom: 2px solid #e4393c;
+                    }
+
+                    a {
+                        display: block;
+                        padding: .1rem .15rem;
+                        color: black;
+
+                        &.active {
+                            color: red;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .search {
+            // display: block;
+            position: absolute;
+            right: 0;
+            z-index: 999;
+            width: .38rem;
+            height: .38rem;
+            line-height: .38rem;
+            text-align: center;
+            color: #999;
+            background-color: #f7f7f7;
+            font-size: .25rem;
+        }
+    }
+    // 显示的搜索框
+    .show-input{
+        display: none;
+       padding-left: .1rem;
+        input{
+            width: 3rem;
+            background-color: #fff;
+            // margin-right: .1rem;
+            text-align: left;
+            font-size: .14rem;
+        }
+        button{
+            width: .6rem;
+            font-size: .14rem;
+            color: black;
+            height: .34rem;
+            border: none;
+            background-color: #f7f7f7;
+        }
+    }
+}
+
+// 主体区域
+#main{
+    height: 100vh;
+    .mui-scroll-wrapper{
+        padding-top: .93rem;
+        li{
+            display: flex;
+            // 左边图片
+            .left-img{
+                max-width: 1.36rem;
+                height: 1.36rem;
+                display: inline-block;
+                img{
+                    width: 1.36rem;
+                }
+            }
+            // 右边商品信息
+            .right{
+                flex: 1;
+                .title{
+                    color: #000;
+                    height: .59rem;
+                    line-height: .3rem;
+                }
+                .price{
+                    color: red;
+                    font-size: .16rem;
+                    i{
+                        font-style: normal;
+                        font-size: .12rem;
+                        margin-right: .05rem;
+                    }
+                    em{
+                        font-style: normal;
+                        font-size: .10rem
+                    }
+                    del{
+                        color: #ccc;
+                        font-size: .12rem;
+                        margin-left: .1rem;
+
+                    }
+                }
+                .ticket{
+                    font-size: .12rem;
+                    color: red;
+                    .bar{
+                        padding-top: .05rem;
+                        overflow: hidden;
+                    }
+                    i{
+                        display: inline-block;
+                        width: .8rem;
+                        height: .15rem;
+                        background-color: #ffb7b7;
+                        border-radius: .075rem;
+                        margin-right: .1rem;
+                        position: relative;
+                        overflow: hidden;
+                        float: left;
+                        em{
+                            background-color: #ff5e5d;
+                            width: .8rem;
+                            height: .15rem;
+                            position: absolute;
+                            left: 0;
+                            border-radius: .075rem;
+                        }
+                        span{ 
+                            line-height: .15rem;
+                            color: #fff;
+                            font-size: .12rem;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                        }
+                    } 
+                    b{
+                        float: left;
+                        height: .15rem;
+                        display: inline-block;
+                        line-height: .15rem;
+                    }
+                }
+                .last{
+                    margin-top: .1rem;
+                   a{
+                       &:first-of-type{
+                           color: red;
+                           font-size: .12rem;
+                           display: inline-block;
+                           width: auto;
+                           padding: 0 .05rem;
+                           border: red dashed .01rem;
+                       }
+                       &:last-of-type{
+                        display: inline-block;
+                        width: .6rem;
+                        color: #fff;
+                        font-size: .12rem;
+                        padding: .03rem .05rem;
+                        border-radius: .05rem;
+                        background-color: #ff5e5d;
+                        margin-left: .2rem;
+                       }
+                   }
+                }
+            }
+        }
+    }
+    
+}

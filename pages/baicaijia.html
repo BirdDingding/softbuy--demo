@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../less/baicaijia.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+      <div class="title">
+            <a href="#" class="fa fa-chevron-left left"></a>
+            <span class="center">白菜价-淘宝内部券</span>
+            <a href="#" class="right"><img src="../images/header_app.png" alt=""></a>
+      </div>
+       <!-- 导航栏区域 -->
+      <nav id="nav">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul>
+                        
+                    </ul>
+                    
+                </div>
+                
+            </div>
+            <!-- 搜索按钮 -->
+            <a href="#" class="mui-icon mui-icon-search search"></a>
+        </nav>
+        <!-- 显示的搜索框 -->
+        <div class="show-input">
+            <input type="search" placeholder="请输入搜索关键词">
+            <button type="button">搜索</button>
+        </div>
+        
+    </header>
+
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <ul class="mui-table-view">
+            
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部区域 -->
+    <footer id="footer"></footer>
+
+
+<!-- 导航栏模板 -->
+<script type="text/html" id="navTpl">
+    {{each result value index}}
+    <li class="{{index==0?'active':''}}"><a href="#" class="{{index==0?'active':''}}" data-id="{{value.titleId}}">{{value.title}}</a></li>
+    {{/each}}
+</script>
+
+<!-- 主体商品模板 -->
+<script type="text/html" id="mainTpl">
+    {{each result value index}}
+    <!-- 每个商品信息 -->
+    <li class="mui-table-view-cell mui-media" data-id="{{@value.productId}}">
+        <div href="javascript:;" >
+            <!-- 左边图片 -->
+            <div class="mui-media-object mui-pull-left left-img"> {{@value.productImg}}</div>      
+            <!-- 右边商品信息 -->
+            <div class="mui-media-body right">
+                <p class="title">{{@value.productName}}</p>       
+                <p class="price">{{@value.productPrice}}</p>
+                <!-- <progress max="100" value="0" id="pg"></progress> -->
+                <div class="ticket">{{@value.productCouponRemain}}</div>
+                <div class="last">{{@value.productCoupon}}{{@value.productHref}}</div>      
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+    <script src="../lib/zepto/zepto.min.js"></script>
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <!-- <script src="../lib/bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="../lib/artTemplate/template-web.js"></script>
+    <script src="../js/baicaijia.js"></script>
+
+</body>
+</html>
