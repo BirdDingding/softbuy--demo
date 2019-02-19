@@ -1,0 +1,217 @@
+body {
+  /* Mui默认是17px */
+  font-size: .14rem;
+}
+/* 设置我们的html根元素来实现rem适配 */
+html {
+  /* 设置 根元素在 375屏幕下的时候 是100px   100px就是 26.66667vw */
+  font-size: 26.66667vw;
+}
+/* 去掉默认的间距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  /* 解决图片和块级元素3px间隙问题 */
+  vertical-align: middle;
+}
+/* 实现头部 中间 底部的上中下布局 给body设置 flex布局 让头部和底部高度固定 中间flex1 自适应 */
+#header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: #f7f7f7;
+}
+#header .title {
+  display: flex;
+  text-align: center;
+  background-color: #e4393c;
+}
+#header .title .left {
+  width: .4rem;
+  font-size: .2rem;
+  color: #fff;
+  line-height: .44rem;
+}
+#header .title .center {
+  flex: 1;
+  font-size: .2rem;
+  color: #fff;
+  line-height: .44rem;
+}
+#header .title .right {
+  width: .4rem;
+  display: block;
+}
+#header .title .right img {
+  width: 100%;
+}
+#header #nav {
+  position: relative;
+  height: .48rem;
+  background-color: #f7f7f7;
+  z-index: 999;
+}
+#header #nav .mui-scroll {
+  width: 8.8rem;
+  display: block;
+}
+#header #nav .mui-scroll ul {
+  background-color: #fff;
+  height: .38rem;
+}
+#header #nav .mui-scroll ul li {
+  list-style: none;
+  float: left;
+  height: .38rem;
+  font-size: .14rem;
+}
+#header #nav .mui-scroll ul li.active {
+  border-bottom: 2px solid #e4393c;
+}
+#header #nav .mui-scroll ul li a {
+  display: block;
+  padding: .1rem .15rem;
+  color: black;
+}
+#header #nav .mui-scroll ul li a.active {
+  color: red;
+}
+#header #nav .search {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  width: .38rem;
+  height: .38rem;
+  line-height: .38rem;
+  text-align: center;
+  color: #999;
+  background-color: #f7f7f7;
+  font-size: .25rem;
+}
+#header .show-input {
+  display: none;
+  padding-left: .1rem;
+}
+#header .show-input input {
+  width: 3rem;
+  background-color: #fff;
+  text-align: left;
+  font-size: .14rem;
+}
+#header .show-input button {
+  width: .6rem;
+  font-size: .14rem;
+  color: black;
+  height: .34rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+#main {
+  height: 100vh;
+}
+#main .mui-scroll-wrapper {
+  padding-top: .93rem;
+}
+#main .mui-scroll-wrapper li {
+  display: flex;
+}
+#main .mui-scroll-wrapper li .left-img {
+  max-width: 1.36rem;
+  height: 1.36rem;
+  display: inline-block;
+}
+#main .mui-scroll-wrapper li .left-img img {
+  width: 1.36rem;
+}
+#main .mui-scroll-wrapper li .right {
+  flex: 1;
+}
+#main .mui-scroll-wrapper li .right .title {
+  color: #000;
+  height: .59rem;
+  line-height: .3rem;
+}
+#main .mui-scroll-wrapper li .right .price {
+  color: red;
+  font-size: .16rem;
+}
+#main .mui-scroll-wrapper li .right .price i {
+  font-style: normal;
+  font-size: .12rem;
+  margin-right: .05rem;
+}
+#main .mui-scroll-wrapper li .right .price em {
+  font-style: normal;
+  font-size: 0.1rem;
+}
+#main .mui-scroll-wrapper li .right .price del {
+  color: #ccc;
+  font-size: .12rem;
+  margin-left: .1rem;
+}
+#main .mui-scroll-wrapper li .right .ticket {
+  font-size: .12rem;
+  color: red;
+}
+#main .mui-scroll-wrapper li .right .ticket .bar {
+  padding-top: .05rem;
+  overflow: hidden;
+}
+#main .mui-scroll-wrapper li .right .ticket i {
+  display: inline-block;
+  width: .8rem;
+  height: .15rem;
+  background-color: #ffb7b7;
+  border-radius: .075rem;
+  margin-right: .1rem;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+#main .mui-scroll-wrapper li .right .ticket i em {
+  background-color: #ff5e5d;
+  width: .8rem;
+  height: .15rem;
+  position: absolute;
+  left: 0;
+  border-radius: .075rem;
+}
+#main .mui-scroll-wrapper li .right .ticket i span {
+  line-height: .15rem;
+  color: #fff;
+  font-size: .12rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+#main .mui-scroll-wrapper li .right .ticket b {
+  float: left;
+  height: .15rem;
+  display: inline-block;
+  line-height: .15rem;
+}
+#main .mui-scroll-wrapper li .right .last {
+  margin-top: .1rem;
+}
+#main .mui-scroll-wrapper li .right .last a:first-of-type {
+  color: red;
+  font-size: .12rem;
+  display: inline-block;
+  width: auto;
+  padding: 0 .05rem;
+  border: red dashed .01rem;
+}
+#main .mui-scroll-wrapper li .right .last a:last-of-type {
+  display: inline-block;
+  width: .6rem;
+  color: #fff;
+  font-size: .12rem;
+  padding: .03rem .05rem;
+  border-radius: .05rem;
+  background-color: #ff5e5d;
+  margin-left: .2rem;
+}
