@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢卖首页</title>
+    <!-- 引入mui的样式 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 引入习题图标库 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+
+    <!-- 引入公共样式base.css-->
+    <link rel="stylesheet" href="less/_base.less">
+    <!-- 引入主页样式 -->
+    <link rel="stylesheet" href="less/index.css">
+    <!-- 引入less编辑器 -->
+    <link rel="stylesheet" href="lib/less/less.js">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="logoApp">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/header_logo.png" alt="">
+                </a>
+            </div>
+            <div class="app">
+                <a href="#">
+                    <img src="./images/header_app.png" alt="">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="search">
+            <input type="text" placeholder="请输入要搜索的内容">
+            <button>搜索</button>
+        </div>
+    </header>
+    <!-- 主体 -->
+    <main class="main">
+        <!-- 轮播图 -->
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner04.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner01.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner02.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner03.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner04.jpg" /></a></div>
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner01.jpg" /></a></div>
+            </div>
+        </div>
+        <!-- 导航 -->
+        <div class="nav">
+            <div class="mui-row productlist ">
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_search.png" alt="">
+                        <p>比价搜索</p>
+                    </a>
+                </div>
+
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_cu.png" alt="">
+                        <p>省钱控</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_coudanpin.png" alt="">
+                        <p>国内折扣</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_bcj.png" alt="">
+                        <p>白菜价</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/haitao.png" alt="">
+                        <p>海外折扣</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_temai.png" alt="">
+                        <p>优惠券</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_trend.png" alt="">
+                        <p>历史价格</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3 more">
+                    <a href="#">
+                        <img src="./images/gengduo.png" alt="">
+                        <p>更多</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_coudanpin.png" alt="">
+                        <p>凑单品</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_kb.png" alt="">
+                        <p>口碑排行</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="javascript: ;">
+                        <img src="./images/ic_mall.png" alt="">
+                        <p>商城导航</p>
+                    </a>
+                </div>
+                <div class="mui-col-xs-3">
+                    <a href="#">
+                        <img src="./images/ic_pp.png" alt="">
+                        <p>商品大全</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="sales">
+            <span>超值折扣区</span>
+            <a href="javascript:;" class="mui-icon mui-icon-arrowright"></a>
+        
+        </div>
+    </main>
+
+    <script id="navlistTpl" type="text/html">
+        {{ each result value index }}
+        <div class="mui-col-xs-3">
+            <a href="#">
+            {{ @value.img}}
+                <p>{{ value.name }}</p>
+            </a>
+        </div>
+        {{ /each }}
+    </script>
+
+    <!-- 引入mui的js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的js -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 引入首页js -->
+    <script src="js/index.js"></script>
+</body>
+<script>
+
+</script>
+
+</html>
