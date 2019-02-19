@@ -17,3 +17,104 @@ img {
   vertical-align: middle;
 }
 /* 实现头部 中间 底部的上中下布局 给body设置 flex布局 让头部和底部高度固定 中间flex1 自适应 */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+#header1 {
+  width: 100%;
+  height: .5rem;
+  background-color: #ff4e49;
+  display: flex;
+  justify-content: space-between;
+  line-height: .5rem;
+}
+#header1 .left {
+  display: block;
+}
+#header1 .left img {
+  height: .25rem;
+  padding-left: .1rem;
+}
+#header1 .right {
+  display: block;
+}
+#header1 .right img {
+  width: .34rem;
+  height: .34rem;
+  padding-right: .1rem;
+}
+#header2 {
+  display: flex;
+  text-align: center;
+  background-color: #e4393c;
+}
+#header2 .left {
+  width: .4rem;
+  font-size: .2rem;
+  color: #fff;
+  line-height: .44rem;
+}
+#header2 .center {
+  flex: 1;
+  font-size: .2rem;
+  color: #fff;
+  line-height: .44rem;
+}
+#header2 .right {
+  width: .4rem;
+  display: block;
+}
+#header2 .right img {
+  width: 100%;
+}
+#main {
+  flex: 1;
+}
+#footer {
+  background-color: #232a34;
+}
+#footer .footer-title {
+  width: 100%;
+  height: .34rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  text-align: center;
+}
+#footer .footer-title a {
+  height: 100%;
+  line-height: .35rem;
+  color: #fff;
+}
+#footer .footer-title .left {
+  width: 1.12rem;
+  border-right: 1px solid #ccc;
+}
+#footer .footer-title .right {
+  flex: 1;
+}
+#footer .footer-content {
+  width: 100%;
+  height: .84rem;
+  text-align: center;
+}
+#footer .footer-content .down {
+  font-size: .12rem;
+  line-height: .5rem;
+}
+#footer .footer-content .down .left {
+  color: #ff4e49;
+}
+#footer .footer-content .down .right {
+  color: #b8b8b7;
+}
+#footer .footer-content .address {
+  font-size: .12rem;
+  line-height: .12rem;
+  color: #666;
+}
