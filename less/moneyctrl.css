@@ -1,153 +1,11 @@
-body {
-  /* Mui默认是17px */
-  font-size: .14rem;
-}
-/* 设置我们的html根元素来实现rem适配 */
-html {
-  /* 设置 根元素在 375屏幕下的时候 是100px   100px就是 26.66667vw */
-  font-size: 26.66667vw;
-}
-/* 去掉默认的间距 */
-* {
-  margin: 0;
-  padding: 0;
-}
-img {
-  /* 解决图片和块级元素3px间隙问题 */
-  vertical-align: middle;
-  border: 0 none;
-}
-em,
-i {
-  font-style: normal;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-ul,
-ol,
-li {
-  list-style: none;
-}
-strong {
-  font-weight: normal;
-}
-.clearfix:after {
-  content: "";
-  display: block;
-  visibility: hidden;
-  height: 0;
-  clear: both;
-}
-.clearfix {
-  zoom: 1;
-}
-/* 实现头部 中间 底部的上中下布局 给body设置 flex布局 让头部和底部高度固定 中间flex1 自适应 */
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #fff;
-}
-#header1 {
-  width: 100%;
-  height: .5rem;
-  background-color: #ff4e49;
-  display: flex;
-  justify-content: space-between;
-  line-height: .5rem;
-}
-#header1 .left {
-  display: block;
-}
-#header1 .left img {
-  height: .25rem;
-  padding-left: .1rem;
-}
-#header1 .right {
-  display: block;
-}
-#header1 .right img {
-  width: .34rem;
-  height: .34rem;
-  padding-right: .1rem;
-}
-#header2 {
-  display: flex;
-  text-align: center;
-  background-color: #e4393c;
-}
-#header2 .left {
-  width: .4rem;
-  font-size: .2rem;
-  color: #fff;
-  line-height: .44rem;
-}
-#header2 .center {
-  flex: 1;
-  font-size: .2rem;
-  color: #fff;
-  line-height: .44rem;
-}
-#header2 .right {
-  width: .4rem;
-  display: block;
-}
-#header2 .right img {
-  width: 100%;
-}
-#main {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
+@import "_base.css";
+#header {
+  background-color: red;
+  height: 85px;
 }
 #footer {
-  background-color: #232a34;
-}
-#footer .footer-title {
-  width: 100%;
-  height: .34rem;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  text-align: center;
-}
-#footer .footer-title a {
-  height: 100%;
-  line-height: .35rem;
-  color: #fff;
-}
-#footer .footer-title .left {
-  width: 1.12rem;
-  border-right: 1px solid #ccc;
-}
-#footer .footer-title .right {
-  flex: 1;
-}
-#footer .footer-content {
-  width: 100%;
-  height: .84rem;
-  text-align: center;
-}
-#footer .footer-content .down {
-  font-size: .12rem;
-  line-height: .5rem;
-}
-#footer .footer-content .down .left {
-  color: #ff4e49;
-}
-#footer .footer-content .down .right {
-  color: #b8b8b7;
-}
-#footer .footer-content .address {
-  font-size: .12rem;
-  line-height: .12rem;
-  color: #666;
+  background-color: red;
+  height: 96px;
 }
 #main {
   position: relative;
@@ -157,45 +15,44 @@ body {
 #main .main-wrapper {
   padding: .1rem 0;
 }
-#main .main-wrapper .main-scroll ul {
+#main .main-wrapper .main-scroll .product-list {
   list-style: none;
 }
-#main .main-wrapper .main-scroll ul li {
-  box-sizing: border-box;
+#main .main-wrapper .main-scroll .product-list li {
   padding: 14px 8px;
   display: flex;
   background-color: #fff;
   border-bottom: .01rem solid #eee;
 }
-#main .main-wrapper .main-scroll ul li .pic {
+#main .main-wrapper .main-scroll .product-list li .pic {
   flex: 1;
 }
-#main .main-wrapper .main-scroll ul li .pic img {
+#main .main-wrapper .main-scroll .product-list li .pic img {
   width: 100%;
 }
-#main .main-wrapper .main-scroll ul li .describe {
+#main .main-wrapper .main-scroll .product-list li .describe {
   flex: 3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#main .main-wrapper .main-scroll ul li .describe .title {
+#main .main-wrapper .main-scroll .product-list li .describe .title {
   font-size: 16px;
   line-height: .24rem;
 }
-#main .main-wrapper .main-scroll ul li .describe .title span {
+#main .main-wrapper .main-scroll .product-list li .describe .title span {
   margin-right: 3px;
 }
-#main .main-wrapper .main-scroll ul li .describe .title span:nth-of-type(2) {
+#main .main-wrapper .main-scroll .product-list li .describe .title span:nth-of-type(2) {
   color: #fd582f;
 }
-#main .main-wrapper .main-scroll ul li .describe .other {
+#main .main-wrapper .main-scroll .product-list li .describe .other {
   bottom: 0;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
 }
-#main .main-wrapper .main-scroll ul li .describe .other .comment i {
+#main .main-wrapper .main-scroll .product-list li .describe .other .comment i {
   margin-right: .03rem;
 }
 #main .main-wrapper .main-scroll #paging {
@@ -211,10 +68,23 @@ body {
   border-radius: 0.05rem;
   box-shadow: 0rem 0rem 0.05rem #ccc;
 }
-#main .main-wrapper .main-scroll #paging #selectAge {
+#main .main-wrapper .main-scroll #selectAge {
   flex: 1;
   margin: 0 0.25rem;
   border: 1px solid #cccccc !important;
   height: 0.35rem;
   line-height: 0.17rem;
+  padding: 0;
+}
+#uptop {
+  position: fixed;
+  bottom: 1.1rem;
+  right: .2rem;
+  z-index: 999;
+}
+#uptop a.fa {
+  display: block;
+  font-size: .5rem;
+  color: #bbb;
+  transform: rotateZ(-45deg);
 }

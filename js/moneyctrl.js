@@ -32,28 +32,27 @@ $(function () {
         location.href = "save-sale.html?productId=" + productId;
     })
 
+    // 上一页
     $("#previous").on("tap", function () {
         page--;
         yemian(page);
         $('.main-scroll').css('transform', 'translateY(0)');
+        $("#selectAge").val(page)
     });
+
     $("#below").on("tap", function () {
         page++;
         yemian(page);
         $('.main-scroll').css('transform', 'translateY(0)');
+        $("#selectAge").val(page);
     });
-    // $("#selectAge").on("tap", 'option', function () {
-    //     // page = $(this).val();
-    //     console.log($(this));
-    //     yemian(page);
-    // });
 
-    // $('#selectAge').change(function (e) {
-    //     console.log(e);
-
-    //     e.preventDefault();
-    //     yemian(parseInt(this.value) - 1)
-    // });
+    // 下一页
+    $("#selectAge").on("change", function () {
+        // console.log($(this).val());
+        page = $(this).val();
+        yemian(page);
+    });
 
     // 给返回顶部添加样
     //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>海淘折扣</title>
-    <link rel="stylesheet/less" href="../less/moneyctrl.css">
+    <link rel="stylesheet/less" href="../less/moneyctrl.less">
     <script src="../lib/less/less.js"></script>
     <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
@@ -24,13 +24,26 @@
     <main id="main">
         <div class="mui-scroll-wrapper main-wrapper">
             <div class="mui-scroll main-scroll">
-                <ul></ul>
+                <ul id=""></ul>
                 <!-- 分页区域 -->
                 <section id="paging">
                     <a href="javascript:getData(page-1)" class="mui-btn mui-btn-outlined previous" id="previous">上一页</a>
                     <!-- <a href="#" class="mui-btn mui-btn-outlined">上一页</a> -->
                     <select name="selectAge" id="selectAge">
-
+                        <option value="1">1/14</option>
+                        <option value="2">2/14</option>
+                        <option value="3">3/14</option>
+                        <option value="4">4/14</option>
+                        <option value="5">5/14</option>
+                        <option value="6">6/14</option>
+                        <option value="7">7/14</option>
+                        <option value="8">8/14</option>
+                        <option value="9">9/14</option>
+                        <option value="10">10/14</option>
+                        <option value="11">11/14</option>
+                        <option value="12">12/14</option>
+                        <option value="13">13/14</option>
+                        <option value="14">14/14</option>
                     </select>
                     <!-- <a href="#" class="mui-btn mui-btn-outlined">下一页</a> -->
                     <a href="javascript:getData(page+1)" class="mui-btn mui-btn-outlined" id="below">下一页</a>
@@ -39,36 +52,34 @@
 
         </div>
 
+
     </main>
     <footer id="footer">
-        <div class="footer-title">
-            <a href="#" class="left">登录</a>
-            <a href="#" class="left">注册</a>
-            <a href="#" class="right"><img src="../images/top.png" alt=""> 返回顶部</a>
-        </div>
-        <div class="footer-content">
-            <div class="down">
-                <a href="#" class="left">手机APP下载</a>
-                <a href="../index.html" class="right">慢慢买手机版 -- 掌上比价平台</a>
-            </div>
-            <div class="address">m.manmanbuy.com</div>
-        </div>
+        <a href="#" class="left">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+        <a href="#" class="right">
+            <img src="../images/header_app.png" alt="">
+        </a>
     </footer>
     <script id="moneyCtrl" type="text/html">
         {{each list value index}}
-            <li data-id="{{value.productId}}">
-                <div class="pic">{{#value.productImgSm}}</div>
-                <div class="describe">
-                    <div class="title"><span>{{value.productName}}</span><span>{{value.productPinkage}}</span></div>
-                    <div class="other">
-                        <div class="mall">
-                            <span>{{value.productFrom}}</span>|<span>{{value.productTime}}</span>
-                        </div>
-                        <div class="comment"><i class="fa fa-comment"></i>{{value.productComCount}}</div>
-                    </span>
+        <li data-id="{{value.productId}}">
+            <div class="pic">{{#value.productImgSm}}</div>
+            <div class="describe">
+                <div class="title">
+                    <span>{{value.productName}}</span>
+                    <span>{{value.productPinkage}}</span>
                 </div>
-            </li>
-        {{/each}}
+                <div class="other">
+                    <div class="mall">
+                        <span>{{value.productFrom}}</span>|<span>{{value.productTime}}</span>
+                    </div>
+                    <div class="comment"><i class="fa fa-comment"></i>{{value.productComCount}}</div>
+                </span>
+            </div>
+        </li>
+    {{/each}}
     </script>
 </body>
 

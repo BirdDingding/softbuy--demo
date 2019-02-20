@@ -16,7 +16,7 @@ $(function () {
         },
         dataType: "json",
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             // 将数据渲染到界面上
             var html = template("productHtmlTpl", data);
             // console.log(productHtml);
@@ -34,7 +34,6 @@ $(function () {
         deceleration: 0.0006, //阻尼系数,系数越小滑动越灵敏
         bounce: true //是否启用回弹
     });
-
 
     // 给返回顶部添加样
         //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
