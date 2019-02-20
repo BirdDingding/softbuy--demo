@@ -1,0 +1,91 @@
+@import "_base_xx.less";
+
+
+#main {
+    position: relative;
+    flex: 1;
+    background-color: #eee;
+
+    .main-wrapper {
+        padding: .1rem 0;
+
+        .main-scroll {
+            ul {
+                list-style: none;
+
+                li {
+                    box-sizing: border-box;
+                    padding: 14px 8px;
+                    display: flex;
+                    background-color: #fff;
+                    border-bottom: .01rem solid #eee;
+
+                    .pic {
+                        flex: 1;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .describe {
+                        flex: 3;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .title {
+                            font-size: 16px;
+                            line-height: .24rem;
+
+                            span {
+                                margin-right: 3px;
+
+                                &:nth-of-type(2) {
+                                    color: #fd582f;
+                                }
+                            }
+                        }
+
+                        .other {
+                            bottom: 0;
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 12px;
+
+                            .comment {
+                                i {
+                                    margin-right: .03rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            #paging {
+                padding: 0.1rem 0.3rem;
+                display: flex;
+                background: #fff;
+                margin: 0.1rem 0;
+
+                a {
+                    height: 0.35rem;
+                    background: #d4d4d4;
+                    flex: 1;
+                    border-radius: 0.05rem;
+                    box-shadow: 0rem 0rem 0.05rem #ccc;
+                }
+            }
+
+            #paging #selectAge {
+                flex: 1;
+                margin: 0 0.25rem;
+                border: 1px solid #cccccc !important;
+                height: 0.35rem;
+                line-height: 0.17rem;
+            }
+        }
+    }
+
+}
