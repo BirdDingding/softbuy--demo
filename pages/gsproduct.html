@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>凑单品</title>
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="../less/gsproduct.less">
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <header id="header">
+        <div class="left">
+            <a href="javascript:;" class="fa fa-chevron-left"></a>
+        </div>
+        <div class="center">
+            <h3>凑单品</h3>
+        </div>
+        <div class="right">
+            <a href="javascript:;"><img src="../images/header_app.png" alt=""></a>
+        </div>
+    </header>
+    <!-- 搜索导航 -->
+    <nav id="nav">
+        <div class="left">
+            <ul class="shangpin-title">
+            </ul>
+            <ul class="diqu-title">
+            </ul>
+            <ul class="price-title">
+                <li><a href="javascript:;">全部价格<i class="glyphicon glyphicon-menu-down"></i></a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="javascript:;" class="glyphicon glyphicon-menu-hamburger more"></a>
+        </div>
+    </nav>
+    <input type="text" placeholder="请输入想要搜索的商品" id="search">
+    <a href="javascript:;" class="fa fa-search search-btn"></a>
+    <ul class="shangpin-down down"></ul>
+    <ul class="diqu-down down"></ul>
+    <ul class="price-down down">
+        <li>213</li>
+    </ul>
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <div class="product-list">
+                    <div class="product">
+                        <a class="product-icon"><img src="" alt=""></a>
+                        <div class="product-info">
+                            <span class="product-price">￥0.50</span>
+                            <a type="button" class="mui-btn mui-btn-danger">红色</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="tools">
+        <button type="button" class="btn" id="head">返回页面</button>
+        <button type="button" class="btn" id="returntop">置顶Top↑</button>
+    </div>
+ 
+</body>
+
+</html>
+<script type="text/html" id="navshopTpl">
+    {{each result value index}}
+    <li  data-index='{{index}}' data-id='{{value.shopId}}' data-type='shop'><a href="javascript:;">{{value.shopName}}</a></li>
+    {{/each}}
+</script>
+<script type="text/html" id="navdiquTpl">
+    {{each result value index}}
+    <li  data-index='{{index}}' data-id='{{value.areaId}}' data-type='area'><a href="javascript:;">{{value.areaName}}</a></li>
+    {{/each}}
+</script>
+<script type="text/html" id="shoplistTpl">
+    {{each result value index}}
+    <div class="product" data-price={{value.productPrice}}>
+        <div class="one">
+            <a class="product-icon"><img src="{{value.productImg}}" alt=""></a>
+            <p class="product-name" data-name='{{value.productName}}'>{{value.productName}}</p>
+            <div class="product-info">
+                <span class="product-price">{{value.productPrice}}</span>
+                <a type="button" class="mui-btn mui-btn-danger">去凑单</a>
+            </div>
+        </div>
+        </div>
+        {{/each}}
+</script>
+<script type="text/html" id="shopsearchlistTpl">
+    {{each result value index}}
+    <div class="product" data-price={{value.productPrice}}>
+        <div class="one">
+            <a class="product-icon"><img src="{{value.productImg}}" alt=""></a>
+            <p class="product-name" data-name='{{value.productName}}'>{{value}}</p>
+            <div class="product-info">
+                <span class="product-price">{{value.productPrice}}</span>
+                <a type="button" class="mui-btn mui-btn-danger">去凑单</a>
+            </div>
+        </div>
+        </div>
+        {{/each}}
+</script>
+<script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+<!-- <script src="../lib/bootstrap/js/bootstrap.js"></script> -->
+<script src="../lib/mui/js/mui.js"></script>
+<script src="../lib/zepto/zepto.min.js"></script>
+<script src="../lib/artTemplate/template-web.js"></script>
+<script src="../js/gsproduct.js"></script>
