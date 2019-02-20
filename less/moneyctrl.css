@@ -1,12 +1,4 @@
 @import "_base.css";
-#header {
-  background-color: red;
-  height: 85px;
-}
-#footer {
-  background-color: red;
-  height: 96px;
-}
 #main {
   position: relative;
   flex: 1;
