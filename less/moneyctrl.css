@@ -1,11 +1,76 @@
-@import "_base.css";
+
+body {
+  /* Mui默认是17px */
+  font-size: .14rem;
+}
+/* 设置我们的html根元素来实现rem适配 */
+html {
+  /* 设置 根元素在 375屏幕下的时候 是100px   100px就是 26.66667vw */
+  font-size: 26.66667vw;
+}
+/* 去掉默认的间距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  /* 解决图片和块级元素3px间隙问题 */
+  vertical-align: middle;
+  border: 0 none;
+}
+em,
+i {
+  font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+strong {
+  font-weight: normal;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+/* 实现头部 中间 底部的上中下布局 给body设置 flex布局 让头部和底部高度固定 中间flex1 自适应 */
+body {
+  display: flex;
+  /* 设置flex主轴方向是垂直 */
+  flex-direction: column;
+  /* 推荐使用100vh 不需要给父元素html设置高度 自然和页面一样高 */
+  height: 100vh;
+  /* 使用固定的定位的方式设置padding把内容挤到中间来 */
+  /* padding: .45rem 0; */
+}
 #header {
+  height: .5rem;
   background-color: red;
-  height: 85px;
+}
+#main {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 #footer {
+  height: 1rem;
   background-color: red;
-  height: 96px;
 }
 #main {
   position: relative;
@@ -15,55 +80,70 @@
 #main .main-wrapper {
   padding: .1rem 0;
 }
-#main .main-wrapper .main-scroll .product-list {
+
+#main .main-wrapper .main-scroll ul {
   list-style: none;
 }
-#main .main-wrapper .main-scroll .product-list li {
+#main .main-wrapper .main-scroll ul li {
+  box-sizing: border-box;
   padding: 14px 8px;
   display: flex;
   background-color: #fff;
   border-bottom: .01rem solid #eee;
 }
-#main .main-wrapper .main-scroll .product-list li .pic {
+
+#main .main-wrapper .main-scroll ul li .pic {
   flex: 1;
 }
-#main .main-wrapper .main-scroll .product-list li .pic img {
+#main .main-wrapper .main-scroll ul li .pic img {
   width: 100%;
 }
-#main .main-wrapper .main-scroll .product-list li .describe {
+#main .main-wrapper .main-scroll ul li .describe {
+
   flex: 3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#main .main-wrapper .main-scroll .product-list li .describe .title {
+
+#main .main-wrapper .main-scroll ul li .describe .title {
   font-size: 16px;
   line-height: .24rem;
 }
-#main .main-wrapper .main-scroll .product-list li .describe .title span {
+#main .main-wrapper .main-scroll ul li .describe .title span {
   margin-right: 3px;
 }
-#main .main-wrapper .main-scroll .product-list li .describe .title span:nth-of-type(2) {
+#main .main-wrapper .main-scroll ul li .describe .title span:nth-of-type(2) {
   color: #fd582f;
 }
-#main .main-wrapper .main-scroll .product-list li .describe .other {
+#main .main-wrapper .main-scroll ul li .describe .other {
   bottom: 0;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
 }
-#main .main-wrapper .main-scroll .product-list li .describe .other .comment i {
+
+#main .main-wrapper .main-scroll ul li .describe .other .comment i {
   margin-right: .03rem;
 }
-#uptop {
-  position: fixed;
-  bottom: 1.1rem;
-  right: .2rem;
-  z-index: 999;
+#main .main-wrapper .main-scroll #paging {
+  padding: 0.1rem 0.3rem;
+  display: flex;
+  background: #fff;
+  margin: 0.1rem 0;
 }
-#uptop a.fa {
-  display: block;
-  font-size: .5rem;
-  color: #bbb;
-  transform: rotateZ(-45deg);
+#main .main-wrapper .main-scroll #paging a {
+  height: 0.35rem;
+  background: #d4d4d4;
+  flex: 1;
+  border-radius: 0.05rem;
+  box-shadow: 0rem 0rem 0.05rem #ccc;
+}
+#main .main-wrapper .main-scroll #paging #selectAge {
+  flex: 1;
+  margin: 0 0.25rem;
+  border: 1px solid #cccccc !important;
+  height: 0.35rem;
+  line-height: 0.17rem;
+
 }

@@ -1,29 +1,32 @@
 $(function () {
     yemian();
-
-    // 区域滚动
-    mui('.mui-scroll-wrapper').scroll({
-        scrollY: true, //是否竖向滚动
-        scrollX: false, //是否横向滚动
-        startX: 0, //初始化时滚动至x
-        startY: 0, //初始化时滚动至y
-        indicators: false, //是否显示滚动条
-        deceleration: 0.0006, //阻尼系数,系数越小滑动越灵敏
-        bounce: true //是否启用回弹
-    });
-
     mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
     });
 
+
+
+    var page;
+
+    var flag = true;
     function yemian(id) {
+        // page = pageID;
+        // if (page == 0) {
+        //     $('#previous').addClass("disabled");
+        // } else {
+        //     $('#previous').removeClass("disabled");
+        // }
+        // if (page == 14) {
+        //     $('#below').addClass("disabled");
+        // } else {
+        //     $('#below').removeClass("disabled");
+        // }
+
         $.ajax({
-            type: "get",
             url: 'http://localhost:9090/api/getmoneyctrl',
             data: {
-                pageid: id
+                pageid: 3
             },
-            dataType: "json",
             success: function (obj) {
                 console.log(obj);
                 var html = template('moneyCtrl', {
@@ -33,27 +36,34 @@ $(function () {
             }
         });
     }
+
+
+
+
     // 给商品添加点击事件
-    $("#main .product-list").on("tap", "li", function () {
+    $("#main .product-list").on("tap", "li a", function () {
         // 跳转到商品详情界面
-        var productId = $(this).attr("data-id");
+        var productId = $(this).attr("data-productId");
         // console.log(productId);
-        location.href = "save-sale.html?productId=" + productId;
+        location.href = "discountProductDetail.html?productId=" + productId;
     })
 
-    // 给返回顶部添加样
-    //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
-    var scroll = mui('.mui-scroll-wrapper').scroll();
-    $('.mui-scroll-wrapper').on('scroll', function (e) {
-        // console.log(scroll.y);
-        if (scroll.y < -400) {
-            $("#uptop").show();
-        } else {
-            $("#uptop").hide();
-            return;
+
+
+    function newOpt(allPage) {
+        for (var i = 0; i < allPage; i++) {
+            var opt = document.createElement('option');
+            opt.value = i + 1;
+            opt.innerHTML = opt.value + '/' + allPage;
+            $('#selectAge').append(opt);
         }
-    })
-    $("#uptop a").on("tap", function (e) {
-        mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 100);
-    })
+    }
+    
+    $('#selectAge').change(function (e) {
+    
+        e.preventDefault();
+    
+        getData(parseInt(this.value) - 1)
+    });
+    
 });

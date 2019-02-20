@@ -1,14 +1,5 @@
-@import "_base.css";
 
-#header {
-    background-color: red;
-    height: 85px;
-}
-
-#footer {
-    background-color: red;
-    height: 96px;
-}
+@import "_base_xx.less";
 
 #main {
     position: relative;
@@ -19,10 +10,11 @@
         padding: .1rem 0;
 
         .main-scroll {
-            .product-list {
+            ul {
                 list-style: none;
 
                 li {
+                    box-sizing: border-box;
                     padding: 14px 8px;
                     display: flex;
                     background-color: #fff;
@@ -68,20 +60,30 @@
                     }
                 }
             }
+
+            #paging {
+                padding: 0.1rem 0.3rem;
+                display: flex;
+                background: #fff;
+                margin: 0.1rem 0;
+
+                a {
+                    height: 0.35rem;
+                    background: #d4d4d4;
+                    flex: 1;
+                    border-radius: 0.05rem;
+                    box-shadow: 0rem 0rem 0.05rem #ccc;
+                }
+            }
+
+            #paging #selectAge {
+                flex: 1;
+                margin: 0 0.25rem;
+                border: 1px solid #cccccc !important;
+                height: 0.35rem;
+                line-height: 0.17rem;
+            }
         }
     }
-}
 
-#uptop {
-    position: fixed;
-    bottom: 1.1rem;
-    right: .2rem;
-    z-index: 999;
-
-    a.fa {
-        display: block;
-        font-size: .5rem;
-        color: #bbb;
-        transform: rotateZ(-45deg);
-    }
 }

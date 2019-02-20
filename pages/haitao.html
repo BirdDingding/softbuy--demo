@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>海淘折扣</title>
+    <link rel="stylesheet/less" href="../less/moneyctrl.less">
+    <script src="../lib/less/less.js"></script>
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <main id="main">
+        <div class="mui-scroll-wrapper main-wrapper">
+            <div class="mui-scroll main-scroll">
+                <ul id=""></ul>
+                <!-- 分页区域 -->
+                <section id="paging">
+                    <a href="javascript:getData(page-1)" class="mui-btn mui-btn-outlined previous" id="previous">上一页</a>
+                    <!-- <a href="#" class="mui-btn mui-btn-outlined">上一页</a> -->
+                    <select name="selectAge" id="selectAge">
+
+                    </select>
+                    <!-- <a href="#" class="mui-btn mui-btn-outlined">下一页</a> -->
+                    <a href="javascript:getData(page+1)" class="mui-btn mui-btn-outlined" id="below">下一页</a>
+                </section>
+            </div>
+
+        </div>
+
+
+    </main>
+    <footer id="footer"></footer>
+    <script id="moneyCtrl" type="text/html">
+        {{each list value index}}
+            <li data-id="{{value.productId}}">
+                <div class="pic">{{#value.productImgSm}}</div>
+                <div class="describe">
+                    <div class="title"><span>{{value.productName}}</span><span>{{value.productPinkage}}</span></div>
+                    <div class="other">
+                        <div class="mall">
+                            <span>{{value.productFrom}}</span>|<span>{{value.productTime}}</span>
+                        </div>
+                        <div class="comment"><i class="fa fa-comment"></i>{{value.productComCount}}</div>
+                    </span>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+</body>
+
+<script src="../lib/mui/js/mui.js"></script>
+<script src="../lib/zepto/zepto.min.js"></script>
+<script src="../lib/artTemplate/template-web.js"></script>
+<script src="../js/moneyctrl.js"></script>
+
+</html>
