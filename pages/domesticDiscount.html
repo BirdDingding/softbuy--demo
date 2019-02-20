@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买-国内折扣商品列表</title>
+    <!-- 引入mui.css文件 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <!-- 引入字体图标的css -->
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的css -->
+    <link rel="stylesheet/less" href="../less/domesticDiscount.less">
+    <!-- 引入less的js文件 -->
+    <script src="../lib/less/less.js"></script>
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <main id="main">
+        <!--下拉刷新容器  就是区域滚动的父容器-->
+        <div id="pullrefresh" class="mui-scroll-wrapper">
+            <!-- 区域滚动的子容器 -->
+            <div class="mui-scroll">
+                <ul class="product-list">
+                    <!-- 这部分内容用模板引擎动态渲染 -->
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- 返回顶部 -->
+    <div id="uptop" style="display:none;">
+        <a href="#" class="fa fa-rocket"></a>
+    </div>
+    <footer id="footer"></footer>
+</body>
+
+</html>
+<script type="text/html" id="productListTpl">
+    {{ each result value index}}
+        {{ if index == 0 }}
+        <li class="product" id="gotop">
+        {{ /if }}
+        <li class="product">
+        <a href="#" data-productId="{{ value.productId }}">
+            <div class="product-img">
+                    {{#value.productImg}}
+            </div>
+            <div class="title">{{ value.productName }}</div>
+            <div class="price">{{ value.Price }}</div>
+            <div class="info"><span class="store">{{ value.productFrom }}</span> | <span published>{{ value.productTime }}</span></div>
+        </a>
+    </li>
+    {{ /each }}
+</script>
+<!-- 1. 引入Mui的js文件 需要使用MUi一些JS功能 弹框 轮播图 滚动等 -->
+<script src="../lib/mui/js/mui.js"></script>
+<!-- 2. 引入一个zepto 是用来给 获取元素 添加事件 发送请求之类操作 -->
+<script src="../lib/zepto/zepto.min.js"></script>
+<!-- 3. 引入一个artTemplate-web.js 创建模板 渲染数据的 -->
+<script src="../lib/artTemplate/template-web.js"></script>
+<!-- 4. 引入自己的js -->
+<script src="../js/domesticDiscount.js"></script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买-国内折扣商品详情</title>
+    <!-- 引入mui.css文件 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <!-- 引入字体图标的css -->
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入自己的css -->
+    <link rel="stylesheet/less" href="../less/discountProductDetail.less">
+    <!-- 引入less的js文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+
+    </header>
+
+    <!-- 主体区域 -->
+    <main id="main">
+        <!--下拉刷新容器  就是区域滚动的父容器-->
+        <div class="mui-scroll-wrapper">
+            <!-- 区域滚动的子容器 -->
+            <div class="mui-scroll">
+                <div class="productDetail">
+                    <div class="product">
+
+                    </div>
+
+                    <!-- 二维码 -->
+                    <div class="QR">
+                        <img src="../images/mmbweixin2.png" alt="">
+                    </div>
+
+                    <!-- 评论区 -->
+                    <div class="comment">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 返回顶部 -->
+    <div id="uptop" style="display:none;">
+        <a href="#" class="fa fa-rocket"></a>
+    </div>
+    <!-- 底部区域 -->
+    <footer id="footer">
+    </footer>
+
+</body>
+
+</html>
+<!-- 创建商品详情模板 -->
+<script type="text/html" id="productHtmlTpl">
+    {{ each result value }}
+        <div class="product-img">
+                {{#value.productImg}}
+            </div>
+            <div class="title">{{ value.productName }}</div>
+            <div class="info">
+                {{ value.productInfo }}
+            </div>
+            <div class="shop clearfix">
+                <p class="price">{{value.productPrice}}</p>
+                <p class="store">{{value.productFrom}}</span> | <span published>{{value.productTime}}</span></p>
+            </div>
+            <div class="btn">
+                <button type="button" class="mui-btn mui-btn-royal" data-productId="{{value.productId}}">加入购物车</button>
+                <button type="button" class="mui-btn mui-btn-danger"  data-productId="{{value.productId}}">立即购买</button>
+            </div>
+    {{ /each }}
+</script>
+
+<!-- 准备评论的模板 -->
+<script type="text/html" id="commentTpl">
+    {{ each result value }}
+        {{#value.productComment}}
+    {{ /each }}
+</script>
+<!-- 1. 引入Mui的js文件 需要使用MUi一些JS功能 弹框 轮播图 滚动等 -->
+<script src="../lib/mui/js/mui.js"></script>
+<!-- 2. 引入一个zepto 是用来给 获取元素 添加事件 发送请求之类操作 -->
+<script src="../lib/zepto/zepto.min.js"></script>
+<!-- 3. 引入一个artTemplate-web.js 创建模板 渲染数据的 -->
+<script src="../lib/artTemplate/template-web.js"></script>
+<!-- 4. 引入自己的js -->
+<script src="../js/discountProductDetail.js"></script>

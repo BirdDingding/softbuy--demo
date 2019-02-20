@@ -1,0 +1,55 @@
+@import '_base_xx.less';
+
+
+// 主体区域样式
+#main {
+    .product-list {
+        padding: .1rem;
+        display: flex;
+        flex-wrap: wrap;
+        .product {
+            width: 50%;
+            height: 2.5rem;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                font-size: .14rem;
+                color: #000;
+                text-align: center;
+                img {
+                    width: 100%;
+                    height: 1.5rem;
+                }
+                .title {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+                .price {
+                    color: orange;
+                }
+                .info {
+                    color: #eee;
+                }
+            }
+        }
+    }
+}
+
+#uptop {
+    position: fixed;
+    bottom: 1.1rem;
+    right: .2rem;
+    z-index: 999;
+    a.fa {
+        display: block;
+        font-size: .5rem;
+        color: #bbb;
+        transform: rotateZ(-45deg);
+    }
+}
