@@ -1,0 +1,87 @@
+@import "_base.css";
+
+#header {
+    background-color: red;
+    height: 85px;
+}
+
+#footer {
+    background-color: red;
+    height: 96px;
+}
+
+#main {
+    position: relative;
+    flex: 1;
+    background-color: #eee;
+
+    .main-wrapper {
+        padding: .1rem 0;
+
+        .main-scroll {
+            .product-list {
+                list-style: none;
+
+                li {
+                    padding: 14px 8px;
+                    display: flex;
+                    background-color: #fff;
+                    border-bottom: .01rem solid #eee;
+
+                    .pic {
+                        flex: 1;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .describe {
+                        flex: 3;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .title {
+                            font-size: 16px;
+                            line-height: .24rem;
+
+                            span {
+                                margin-right: 3px;
+
+                                &:nth-of-type(2) {
+                                    color: #fd582f;
+                                }
+                            }
+                        }
+
+                        .other {
+                            bottom: 0;
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 12px;
+                            .comment {
+                                i {
+                                    margin-right: .03rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#uptop {
+    position: fixed;
+    bottom: 1.1rem;
+    right: .2rem;
+    z-index: 999;
+
+    a.fa {
+        display: block;
+        font-size: .5rem;
+        color: #bbb;
+        transform: rotateZ(-45deg);
+    }
+}

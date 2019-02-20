@@ -1,0 +1,69 @@
+@import "_base.css";
+#header {
+  background-color: red;
+  height: 85px;
+}
+#footer {
+  background-color: red;
+  height: 96px;
+}
+#main {
+  position: relative;
+  flex: 1;
+  background-color: #eee;
+}
+#main .main-wrapper {
+  padding: .1rem 0;
+}
+#main .main-wrapper .main-scroll .product-list {
+  list-style: none;
+}
+#main .main-wrapper .main-scroll .product-list li {
+  padding: 14px 8px;
+  display: flex;
+  background-color: #fff;
+  border-bottom: .01rem solid #eee;
+}
+#main .main-wrapper .main-scroll .product-list li .pic {
+  flex: 1;
+}
+#main .main-wrapper .main-scroll .product-list li .pic img {
+  width: 100%;
+}
+#main .main-wrapper .main-scroll .product-list li .describe {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#main .main-wrapper .main-scroll .product-list li .describe .title {
+  font-size: 16px;
+  line-height: .24rem;
+}
+#main .main-wrapper .main-scroll .product-list li .describe .title span {
+  margin-right: 3px;
+}
+#main .main-wrapper .main-scroll .product-list li .describe .title span:nth-of-type(2) {
+  color: #fd582f;
+}
+#main .main-wrapper .main-scroll .product-list li .describe .other {
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+#main .main-wrapper .main-scroll .product-list li .describe .other .comment i {
+  margin-right: .03rem;
+}
+#uptop {
+  position: fixed;
+  bottom: 1.1rem;
+  right: .2rem;
+  z-index: 999;
+}
+#uptop a.fa {
+  display: block;
+  font-size: .5rem;
+  color: #bbb;
+  transform: rotateZ(-45deg);
+}

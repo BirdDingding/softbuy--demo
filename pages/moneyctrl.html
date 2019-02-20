@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>省钱控</title>
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="../less/moneyctrl.less">
+    <script src="../lib/less/less.js"></script>
+    <link rel="stylesheet" href="../lib/jqueryPagination/css/jquery.pagination.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <main id="main">
+        <div class="mui-scroll-wrapper main-wrapper">
+            <div class="mui-scroll main-scroll">
+                <ul class="product-list">
+                    <!-- <li class="">
+                        <div class="pic">
+                            <img src="http://img2017.manmanbuy.com/Thumb_2019020010033844164.jpg">
+                        </div>
+                        <div class="describe">
+                            <div class="title"><span>楼兰丝路 新疆红枣 500g*3袋</span><span>21.9元包邮（券后）</span></div>
+                            <div class="other">
+                                <div class="mall">
+                                    <span>天猫旗舰店</span>|<span>02-18 10:22</span>
+                                </div>
+                                <div class="comment"><i class="fa fa-comment"></i>0</div>
+                            </span>
+                        </div>
+                    </li> -->
+                </ul>
+
+
+                <div class="box">
+                    <div id="pagination2" class="page fl">
+                        <div class="ui-pagination-container">
+                            <a href="javascript:void(0);" class="ui-pagination-page-item" data-current="5">上一页</a>
+                            <input type="text" placeholder="页码" style="height:20px;width:50px;margin-top: -4px">
+                            <a href="javascript:void(0);" class="ui-pagination-page-item" data-current="7">下一页</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="uptop" style="display:none;">
+            <a href="#" class="fa fa-rocket"></a>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script id="moneyCtrl" type="text/html">
+        {{each list value index}}
+            <li data-id="{{value.productId}}">
+                <div class="pic">{{#value.productImgSm}}</div>
+                <div class="describe">
+                    <div class="title">
+                        <span>{{value.productName}}</span>
+                        <span>{{value.productPinkage}}</span>
+                    </div>
+                    <div class="other">
+                        <div class="mall">
+                            <span>{{value.productFrom}}</span>|<span>{{value.productTime}}</span>
+                        </div>
+                        <div class="comment"><i class="fa fa-comment"></i>{{value.productComCount}}</div>
+                    </span>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+</body>
+
+<script src="../lib/mui/js/mui.js"></script>
+<!-- <script src="../lib/zepto/zepto.min.js"></script> -->
+<script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+<script src="../lib/artTemplate/template-web.js"></script>
+<script src=".././lib/jqueryPagination/js/jquery.pagination.min.js"></script>
+<script src="../js/moneyctrl.js"></script>
+
+</html>
