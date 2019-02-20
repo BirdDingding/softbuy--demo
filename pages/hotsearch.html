@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>热度排行榜</title>
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../less/hotsearch.css">
+    <script src="../lib/less/less.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=NRx3owjXschyzMkU3hE5RjnAGUPepBM9"></script>
+</head>
+
+<body>
+
+
+
+    
+    <!--固定导航栏-->
+    <ul class="mainnav">
+        <li class="video"><a href="javascript:;" class="fa fa-video-camera">视频</a></li>
+        <li class="map"><a href="javascript:void (0)" class="fa fa-map-marker">地图</a></li>
+        <li class="money-bag"><a href="javascript:void (0)" class="fa fa-money">红包</a></li>
+        <li><a href="javascript:void (0)" class="fa fa-video-camera">视频</a></li>
+    </ul>
+   
+
+    <!--遮罩层 地图 -->
+    <div id="allmap"></div>
+
+    <!--遮罩层 视频 -->
+    <div class="mui-backdrop backdrop-video">
+            <!-- <li class="video-play"><a href="../images/yurongfu.mp4"></a></li>   -->
+            <video class="video-play" controls='controls'>
+                <source src="../images/yurongfu.mp4" type="video/mp4">
+            </video>
+        </div>
+     <!--遮罩层 视频的关闭按钮 -->
+     <div class="pasue fa fa-window-close " aria-hidden="true">x</div>
+
+
+     <!-- 红包遮罩层 -->
+<div class="backdrop-money mui-backdrop">
+    <div class="bag"> <p class="next">下一页</p></div>
+</div>
+
+<div class=" waning-money mui-backdrop">
+        <div class="box" >
+            <p class="fa fa-times  close"></p><br>
+            <span class="next">红包来袭</span></div>
+    </div>
+    
+
+
+    <header id="header"> </header>
+
+    <!-- 商品主体 -->
+    <main id="main">
+        <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+
+                <div class="section section4">
+                    <!-- 云 -->
+                    <img class="cloud" src="../images/04/cloud.png" alt="">
+                    <div class="carBox"></div>
+                </div>
+
+
+                <div class="title" id="title">国内折扣热度排行榜-11点档
+                    <div style="position: relative">
+                    </div>
+                </div>
+                <section id="commodity">
+                    <div class="comm-list mui-row">
+                        <div class="tag">No.1</div>
+                        <!-- .mui-col-xs-6>a[href="javascript:void (0)"]>img[src=""] -->
+                        <div class="comm-list-left mui-col-xs-3"><a href="javascript:void (0)"><img src="../images/a0461c4b3485443e888c5280c8dfc632.jpg"
+                                    alt=""></a></div>
+                        <div class="comm-list-right  mui-col-xs-7">
+                            <a href="javascript:void (0)">
+                                <span class=" mui-ellipsis-2">促销活动：天猫 adidas官方旗舰店 超级品牌日 直降新低+5元无门槛券</span>
+                                <i>53.78元</i>
+                                <div class="productTips">小编烟火 / 慢慢买 &nbsp; 有1人评论</div>
+                                <p>京东商城 &nbsp; &nbsp; 10-25 14:10</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="comm-list mui-row">
+                        <div class="tag">No.1</div>
+                        <!-- .mui-col-xs-6>a[href="javascript:void (0)"]>img[src=""] -->
+                        <div class="comm-list-left mui-col-xs-3"><a href="javascript:void (0)"><img src="../images/a0461c4b3485443e888c5280c8dfc632.jpg"
+                                    alt=""></a></div>
+                        <div class="comm-list-right  mui-col-xs-7">
+                            <a href="javascript:void (0)">
+                                <span class=" mui-ellipsis-2">促销活动：天猫 adidas官方旗舰店 超级品牌日 直降新低+5元无门槛券</span>
+                                <i>53.78元</i>
+                                <div class="productTips">小编烟火 / 慢慢买 &nbsp; 有1人评论</div>
+                                <p>京东商城 &nbsp; &nbsp; 10-25 14:10</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="comm-list mui-row">
+                        <div class="tag">No.1</div>
+                        <!-- .mui-col-xs-6>a[href="javascript:void (0)"]>img[src=""] -->
+                        <div class="comm-list-left mui-col-xs-3"><a href="javascript:void (0)"><img src="../images/a0461c4b3485443e888c5280c8dfc632.jpg"
+                                    alt=""></a></div>
+                        <div class="comm-list-right  mui-col-xs-7">
+                            <a href="javascript:void (0)">
+                                <span class=" mui-ellipsis-2">促销活动：天猫 adidas官方旗舰店 超级品牌日 直降新低+5元无门槛券</span>
+                                <i>53.78元</i>
+                                <div class="productTips">小编烟火 / 慢慢买 &nbsp; 有1人评论</div>
+                                <p>京东商城 &nbsp; &nbsp; 10-25 14:10</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="bottom">
+                    <div class="mui-row point">
+                        <div class="mui-col-xs-4"><a href="javascript:void (0)">登录</a></div>
+                        <div class="mui-col-xs-4 middle"><a href="javascript:void (0)">注册</a></div>
+                        <div class="mui-col-xs-4 navpoint"><a href="javascript:;" class="fa fa-rocket "> 回到顶部</a></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- 遮罩层  轮播图 -->
+    <div class="mui-backdrop  backdrop-list">
+        <div class="mui-content">
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li id="switch" class="mui-table-view-cell">
+                    定时轮播 &nbsp;
+                    <div class="mui-icon mui-icon-close close"></div>
+
+                    <div class="mui-switch">
+                        <div class="mui-switch-handle"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="slider" class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate  sliderBox">
+                    <a href="javascript:void (0)">
+                        <img src="../images/a0461c4b3485443e888c5280c8dfc632.jpg">
+                    </a>
+                </div>
+                <!-- 第一张 -->
+                <div class="mui-slider-item">
+                    <a href="javascript:void (0)">
+                        <img src="../images/7c740b1b0a534cd386a3e4d2e2dd3abb.jpg">
+                    </a>
+                </div>
+                <!-- 第二张 -->
+                <div class="mui-slider-item">
+                    <a href="javascript:void (0)">
+                        <img src="../images/7c6c9a6b48d9472abf788c5c7253ac3b.jpg">
+                    </a>
+                </div>
+                <!-- 第三张 -->
+                <div class="mui-slider-item">
+                    <a href="javascript:void (0)">
+                        <img src="../images/60e446702bc54fe1b294afe9a4e0b088.jpg">
+                    </a>
+                </div>
+                <!-- 第四张 -->
+                <div class="mui-slider-item">
+                    <a href="javascript:void (0)">
+                        <img src="../images/57c659ae782d4e379cda49cc7fa8e9b9.jpg">
+                    </a>
+                </div>
+                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="javascript:void (0)">
+                        <img src="../images/4accf8e2fbb7475eb743b3ea916543b7.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer id="footer">
+        <div class="mui-content-padded">
+            <ul class="mui-pagination mui-pagination-lg">
+                <li class="mui-previous">
+                    <a href="javascript:void (0)">
+                        &laquo;
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void (0)">
+                        1
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void (0)">
+                        2
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void (0)">
+                        3
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void (0)">
+                        4
+                    </a>
+                </li>
+                <li class="mui-active">
+                    <a href="javascript:void (0)">
+                        5
+                    </a>
+                </li>
+                <li class="mui-next mui-disabled">
+                    <a href="javascript:void (0)">
+                        &raquo;
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 底部 -->
+        <div class="nav"><a href="http://m.manmanbuy.com"> &nbsp; &nbsp; 首页</a>
+            &nbsp;&gt;&nbsp;
+            国内折扣热度排行榜</div>
+        <div class="mui-row point">
+            <div class="mui-col-xs-4"><a href="javascript:void (0)">登录</a></div>
+            <div class="mui-col-xs-4 middle"><a href="javascript:void (0)">注册</a></div>
+            <div class="mui-col-xs-4  "><a href="javascript:void (0)" class="fa fa-rocket "> 回到顶部</a></div>
+        </div>
+    </footer>
+</body>
+
+<!-- 单个商品的模板 -->
+<script type="text/html" id="getmoneyctrl">
+    {{each result value index }}
+<div class="comm-list mui-row">
+    <div class="tag">No.1</div>
+    <div class="comm-list-left mui-col-xs-3 img"><a href="javascript:void (0)">
+            <!-- <img src="{{value.productImg2}}"  alt=""> -->
+            {{@value.productImg2}}
+        </a></div>
+    <div class="comm-list-right  mui-col-xs-7">
+        <a href="javascript:void (0)">
+            <span class=" mui-ellipsis-2">{{value.productName}}</span>
+            <i>{{value.productPinkage}}</i>
+            <div class="productTips">{{value.productTips}} &nbsp; {{value.productComCount}}</div>
+            <p>{{value.productFrom}} &nbsp; &nbsp; {{value.productTime}}</p>
+        </a>
+    </div>
+</div>
+{{/each}}
+</script>
+
+</html>
+<script src="../lib/mui/js/mui.min.js"></script>
+<script src="../lib/zepto/zepto.min.js"></script>
+<script src="../lib/artTemplate/template-web.js"></script>
+<script src="../lib/commine/commin.js"></script>
+<script src="../js/hotsearch.js"></script>
