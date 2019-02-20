@@ -13,7 +13,12 @@
 </head>
 
 <body>
-    <header id="header"></header>
+    <header id="header2">
+        <a href="javascript:history.back()" class="fa fa-chevron-left left"></a>
+        <span class="center">页面名称</span>
+        <a href="#" class="right"><img src="../images/header_app.png" alt=""></a>
+        </a>
+    </header>
     <main id="main">
         <div class="mui-scroll-wrapper main-wrapper">
             <div class="mui-scroll main-scroll">
@@ -31,7 +36,7 @@
                 <div class="left-content">
                     <p>{{value.productInfo2}}</p>
                     <p>{{value.productInfo1}}</p>
-                    <div class="left-tu">{{#value.productImgLg}}</div>
+                    <div class="left-tu">{{#value.productImg2}}</div>
                 </div>
                 <!-- 送货地址-->
                 <div class="city-trade">
@@ -55,7 +60,20 @@
     <div id="uptop" style="display:none;">
         <a href="#" class="fa fa-rocket"></a>
     </div>
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <div class="footer-title">
+            <a href="#" class="left">登录</a>
+            <a href="#" class="left">注册</a>
+            <a href="#" class="right"><img src="../images/top.png" alt=""> 返回顶部</a>
+        </div>
+        <div class="footer-content">
+            <div class="down">
+                <a href="#" class="left">手机APP下载</a>
+                <a href="../index.html" class="right">慢慢买手机版 -- 掌上比价平台</a>
+            </div>
+            <div class="address">m.manmanbuy.com</div>
+        </div>
+    </footer>
 </body>
 
 <script src="../lib/mui/js/mui.js"></script>

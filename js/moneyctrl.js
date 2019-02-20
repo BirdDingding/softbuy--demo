@@ -1,34 +1,22 @@
 $(function () {
     yemian();
+
     mui('.mui-scroll-wrapper').scroll({
         deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
     });
 
+    var page = 1;
 
-
-    var page;
-
-    var flag = true;
     function yemian(id) {
-        // page = pageID;
-        // if (page == 0) {
-        //     $('#previous').addClass("disabled");
-        // } else {
-        //     $('#previous').removeClass("disabled");
-        // }
-        // if (page == 14) {
-        //     $('#below').addClass("disabled");
-        // } else {
-        //     $('#below').removeClass("disabled");
-        // }
-
         $.ajax({
+            type: "get",
             url: 'http://localhost:9090/api/getmoneyctrl',
             data: {
-                pageid: 3
+                pageid: id
             },
+            dataType: "json",
             success: function (obj) {
-                console.log(obj);
+                // console.log(obj);
                 var html = template('moneyCtrl', {
                     list: obj.result
                 });
@@ -36,34 +24,51 @@ $(function () {
             }
         });
     }
-
-
-
-
     // 给商品添加点击事件
-    $("#main .product-list").on("tap", "li a", function () {
+    $("#main .product-list").on("tap", "li", function () {
         // 跳转到商品详情界面
-        var productId = $(this).attr("data-productId");
+        var productId = $(this).attr("data-id");
         // console.log(productId);
-        location.href = "discountProductDetail.html?productId=" + productId;
+        location.href = "save-sale.html?productId=" + productId;
     })
 
-
-
-    function newOpt(allPage) {
-        for (var i = 0; i < allPage; i++) {
-            var opt = document.createElement('option');
-            opt.value = i + 1;
-            opt.innerHTML = opt.value + '/' + allPage;
-            $('#selectAge').append(opt);
-        }
-    }
-    
-    $('#selectAge').change(function (e) {
-    
-        e.preventDefault();
-    
-        getData(parseInt(this.value) - 1)
+    $("#previous").on("tap", function () {
+        page--;
+        yemian(page);
+        $('.main-scroll').css('transform', 'translateY(0)');
     });
-    
+    $("#below").on("tap", function () {
+        page++;
+        yemian(page);
+        $('.main-scroll').css('transform', 'translateY(0)');
+    });
+    // $("#selectAge").on("tap", 'option', function () {
+    //     // page = $(this).val();
+    //     console.log($(this));
+    //     yemian(page);
+    // });
+
+    // $('#selectAge').change(function (e) {
+    //     console.log(e);
+
+    //     e.preventDefault();
+    //     yemian(parseInt(this.value) - 1)
+    // });
+
+    // 给返回顶部添加样
+    //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+    var scroll = mui('.mui-scroll-wrapper').scroll();
+    $('.mui-scroll-wrapper').on('scroll', function (e) {
+        // console.log(scroll.y);
+        if (scroll.y < -400) {
+            $("#uptop").show();
+        } else {
+            $("#uptop").hide();
+            return;
+        }
+    })
+    $("#uptop a").on("tap", function (e) {
+        mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 100);
+    })
+
 });

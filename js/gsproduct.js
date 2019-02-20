@@ -67,9 +67,7 @@ $(function () {
                 totalproduct = document.querySelectorAll('.product-list .product');
                 for (var i = 0; i < totalproduct.length; i++) {
                     var oneprice = Number($(totalproduct[i]).data('price').substring(1));
-                    sum += oneprice;
-
-                }
+                    sum += oneprice; }
                 sum = sum.toFixed(2)
                 $('.price-down li').text(sum + "元");
             }
@@ -134,18 +132,19 @@ $(function () {
                     });
                     $('.product-list').html(html);
                  }
-                //   else{
-                //     $('.product-list').html('空');
-                //  }
-              
-
+                 
             }
+            if(result.length==0){
+                $('.product-list').html('商品为空');
+             }
         }
     })
-    $('#search').on('blur', function () {
+    $('body').on('input propertychange','#search' ,function () {
         var searchVal = $('#search').val().trim();
         if (searchVal.length==0) {
-            queryshop(shopid, areaid);
+            queryshop(0,0); 
+            console.log(1);
+       
         }else{
             return;
         }

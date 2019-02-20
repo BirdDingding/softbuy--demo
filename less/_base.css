@@ -15,6 +15,38 @@ html {
 img {
   /* 解决图片和块级元素3px间隙问题 */
   vertical-align: middle;
+  border: 0 none;
+}
+em,
+i {
+  font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+strong {
+  font-weight: normal;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
 }
 /* 实现头部 中间 底部的上中下布局 给body设置 flex布局 让头部和底部高度固定 中间flex1 自适应 */
 body {
@@ -22,9 +54,6 @@ body {
   flex-direction: column;
   height: 100vh;
   background-color: #fff;
-}
-a {
-  text-decoration: none;
 }
 #header1 {
   width: 100%;
@@ -75,6 +104,8 @@ a {
 }
 #main {
   flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 #footer {
   background-color: #232a34;

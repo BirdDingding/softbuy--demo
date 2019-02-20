@@ -11,14 +11,21 @@
     <!-- 引入字体图标的css -->
     <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
     <!-- 引入自己的css -->
-    <link rel="stylesheet/less" href="../less/domesticDiscount.less">
+    <link rel="stylesheet/less" href="../less/domesticDiscount.css">
     <!-- 引入less的js文件 -->
     <script src="../lib/less/less.js"></script>
 
 </head>
 
 <body>
-    <header id="header"></header>
+    <header id="header1">
+        <a href="#" class="left">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+        <a href="#" class="right">
+            <img src="../images/header_app.png" alt="">
+        </a>
+    </header>
     <main id="main">
         <!--下拉刷新容器  就是区域滚动的父容器-->
         <div id="pullrefresh" class="mui-scroll-wrapper">
@@ -34,7 +41,20 @@
     <div id="uptop" style="display:none;">
         <a href="#" class="fa fa-rocket"></a>
     </div>
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <div class="footer-title">
+            <a href="#" class="left">登录</a>
+            <a href="#" class="left">注册</a>
+            <a href="#" class="right"><img src="../images/top.png" alt=""> 返回顶部</a>
+        </div>
+        <div class="footer-content">
+            <div class="down">
+                <a href="#" class="left">手机APP下载</a>
+                <a href="../index.html" class="right">慢慢买手机版 -- 掌上比价平台</a>
+            </div>
+            <div class="address">m.manmanbuy.com</div>
+        </div>
+    </footer>
 </body>
 
 </html>

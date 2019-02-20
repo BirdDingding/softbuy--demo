@@ -17,7 +17,7 @@
 
 
 
-    
+
     <!--固定导航栏-->
     <ul class="mainnav">
         <li class="video"><a href="javascript:;" class="fa fa-video-camera">视频</a></li>
@@ -25,36 +25,44 @@
         <li class="money-bag"><a href="javascript:void (0)" class="fa fa-money">红包</a></li>
         <li><a href="javascript:void (0)" class="fa fa-video-camera">视频</a></li>
     </ul>
-   
+
 
     <!--遮罩层 地图 -->
     <div id="allmap"></div>
 
     <!--遮罩层 视频 -->
     <div class="mui-backdrop backdrop-video">
-            <!-- <li class="video-play"><a href="../images/yurongfu.mp4"></a></li>   -->
-            <video class="video-play" controls='controls'>
-                <source src="../images/yurongfu.mp4" type="video/mp4">
-            </video>
-        </div>
-     <!--遮罩层 视频的关闭按钮 -->
-     <div class="pasue fa fa-window-close " aria-hidden="true">x</div>
-
-
-     <!-- 红包遮罩层 -->
-<div class="backdrop-money mui-backdrop">
-    <div class="bag"> <p class="next">下一页</p></div>
-</div>
-
-<div class=" waning-money mui-backdrop">
-        <div class="box" >
-            <p class="fa fa-times  close"></p><br>
-            <span class="next">红包来袭</span></div>
+        <!-- <li class="video-play"><a href="../images/yurongfu.mp4"></a></li>   -->
+        <video class="video-play" controls='controls'>
+            <source src="../images/yurongfu.mp4" type="video/mp4">
+        </video>
     </div>
-    
+    <!--遮罩层 视频的关闭按钮 -->
+    <div class="pasue fa fa-window-close " aria-hidden="true">x</div>
 
 
-    <header id="header"> </header>
+    <!-- 红包遮罩层 -->
+    <div class="backdrop-money mui-backdrop">
+        <div class="bag">
+            <p class="next">下一页</p>
+        </div>
+    </div>
+
+    <div class=" waning-money mui-backdrop">
+        <div class="box">
+            <p class="fa fa-times  close"></p><br>
+            <span class="next">红包来袭</span>
+        </div>
+    </div>
+
+    <header id="header1">
+        <a href="#" class="left">
+            <img src="../images/header_logo.png" alt="">
+        </a>
+        <a href="#" class="right">
+            <img src="../images/header_app.png" alt="">
+        </a>
+    </header>
 
     <!-- 商品主体 -->
     <main id="main">
@@ -192,7 +200,7 @@
 
 
 
-    <footer id="footer">
+    <div id="pages">
         <div class="mui-content-padded">
             <ul class="mui-pagination mui-pagination-lg">
                 <li class="mui-previous">
@@ -234,15 +242,21 @@
         </div>
 
         <!-- 底部 -->
-        <div class="nav"><a href="http://m.manmanbuy.com"> &nbsp; &nbsp; 首页</a>
-            &nbsp;&gt;&nbsp;
-            国内折扣热度排行榜</div>
-        <div class="mui-row point">
-            <div class="mui-col-xs-4"><a href="javascript:void (0)">登录</a></div>
-            <div class="mui-col-xs-4 middle"><a href="javascript:void (0)">注册</a></div>
-            <div class="mui-col-xs-4  "><a href="javascript:void (0)" class="fa fa-rocket "> 回到顶部</a></div>
-        </div>
-    </footer>
+        <footer id="footer">
+            <div class="footer-title">
+                <a href="#" class="left">登录</a>
+                <a href="#" class="left">注册</a>
+                <a href="#" class="right"><img src="../images/top.png" alt=""> 返回顶部</a>
+            </div>
+            <div class="footer-content">
+                <div class="down">
+                    <a href="#" class="left">手机APP下载</a>
+                    <a href="../index.html" class="right">慢慢买手机版 -- 掌上比价平台</a>
+                </div>
+                <div class="address">m.manmanbuy.com</div>
+            </div>
+        </footer>
+    </div>
 </body>
 
 <!-- 单个商品的模板 -->
