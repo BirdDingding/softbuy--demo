@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢卖首页</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入mui的样式 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 引入习题图标库 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+
+    <!-- 引入公共样式base.css-->
+    <link rel="stylesheet" href="less/_base.less">
+    <!-- 引入主页样式 -->
+    <link rel="stylesheet" href="less/index.css">
+    <!-- 引入less编辑器 -->
+    <link rel="stylesheet" href="lib/less/less.js">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="logoApp">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/header_logo.png" alt="">
+                </a>
+            </div>
+            <div class="app">
+                <a href="#">
+                    <img src="./images/header_app.png" alt="">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="search">
+            <input type="text" placeholder="请输入要搜索的内容">
+            <button>搜索</button>
+        </div>
+    </header>
+    <!-- 主体 -->
+    <main class="main">
+        <!-- 轮播图 -->
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner04.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner01.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner02.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner03.jpg" /></a></div>
+                <div class="mui-slider-item"><a href="#"><img src="./images/banner04.jpg" /></a></div>
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./images/banner01.jpg" /></a></div>
+            </div>
+        </div>
+        <!-- 导航 -->
+        <div class="menu">
+            <div class="mui-row productlist ">
+
+            </div>
+        </div>
+        <div class="sales">
+            <div class="title">
+                <span class="left">
+                    <h3>超值折扣推荐</h3>
+                </span>
+                <a href="#"><i class="fa fa-chevron-circle-right"></i></a>
+            </div>
+            <div class="sales-list">
+                <ul class="mui-table-view">
+
+
+                </ul>
+            </div>
+
+        </div>
+    </main>
+   <!-- 底部 -->
+   <footer class="footer">
+        <div class="link">
+            <a href="#"  >登陆</a>
+            <a href="#" >注册</a>
+            <a href="#" ><i class="fa fa-arrow-circle-up"></i> 返回顶部</a>
+        </div>
+        
+   </footer>
+   <div class="fa fa-rocket">  
+   </div>
+
+    <script id="navlistTpl" type="text/html">
+        {{ each result value index}}
+        <div class="mui-col-xs-3 {{index==7?'one':''}} ">
+            {{if index == 7}}
+            <a href="javascript:;">
+                    {{@value.img}}
+                    <p>{{value.name}}</p>
+            </a>
+                {{else}}
+            <a href="{{value.titlehref}}">
+                {{@value.img}}
+                <p>{{value.name}}</p>
+            </a>
+            {{/if}}
+        </div>
+        {{ /each }}
+    </script>
+    <script id="sale-list" type="text/html">
+        {{ each result value }}
+        <li class="mui-table-view-cell mui-media">
+            <a href="javascript:;">
+                <div class="mui-media-object mui-pull-left">
+                    {{@value.productImgSm}}
+                </div>
+                <!-- <img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg"> -->
+                    
+                <div class="mui-media-body">
+                        <p>{{ value.productName}}<span>{{value.productPinkage}}</span></p>   
+                        <span>慢慢买 |</span><span>{{ value.productTime}}</span>
+                        <span class="comment"><a href="#"><i class="fa fa-commenting-o"></i>{{ value.productComCount}}</a></span>
+                </div>
+            </a>
+           
+            
+        </li>
+        {{ /each}}
+
+        
+
+
+    </script>
+
+    <!-- 引入mui的js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的js -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 引入首页js -->
+    <script src="js/index.js"></script>
+</body>
+<script>
+
+</script>
+
+</html>
