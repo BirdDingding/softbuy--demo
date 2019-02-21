@@ -162,7 +162,7 @@ body {
 #main img {
   display: block;
   width: 1rem;
-  height: 1rem;
+  height: .42rem;
   max-width: 100%;
 }
 #main #saletitle,
@@ -204,4 +204,7 @@ body {
 #main #goods #goodslist div span {
   color: #ccc;
   font-size: .12rem;
+}
+#main #commentlist .comContent .contentTitle li .mui-media-body {
+  padding: 0 .15rem;
 }

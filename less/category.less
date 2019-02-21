@@ -1,0 +1,307 @@
+/*引入基本样式*/
+@import 'base_c.less';
+
+
+/* 底部广告样式 */
+.app-promotion-bar {
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: #faf8f5;
+    .closefix {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 21px;
+        height: 21px;
+        /* padding: 19px 12px 20px; */
+        margin: -13px 10px 10px;
+        background-image: url(../images/appbar-close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 21px;
+    }
+    .icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 12px;
+        width: 41px;
+        height: 41px;
+        margin: auto;
+        background-image: url(../images/logo.jpg);
+        background-position: center;
+        background-size: 41px;
+    }
+    p {
+        margin-left: 67px;
+        margin-right: 84px;
+        line-height: 1;
+    }
+    .titlefix {
+        margin-top: 12px;
+        margin-bottom: 0;
+        font-size: 18px;
+        color: #888;
+    }
+    .describe {
+        margin-top: 3px;
+        font-size: 14px;
+        color: #999;
+    }
+    .download-btn {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        width: 74px;
+        height: 30px;
+        padding-top: 10px;
+        margin: auto;
+        font-size: 13px;
+        line-height: 1;
+        text-align: center;
+        color: #fff;
+        background-color: #ff7700;
+        border-radius: 4px;
+        box-shadow: inset 0 -2px #ff5500;
+        text-decoration: none;
+    }
+}
+
+#top {
+    position: fixed;
+    z-index: 999;
+    /* 头部广告样式 */
+.appbanner {
+
+    background: #434343;
+    position: reative;
+    height: 85px;
+    padding: 10px;
+    .applogo {
+        float: left;
+        img {
+            width: 64px;
+        }
+    }
+    .tit {
+        float: left;
+        color: #fff;
+        font-size: 16px;
+        margin-left: 10px;
+        .subtit {
+            margin-top: 4px;
+            p {
+                font-size: 12px;
+                line-height: 20px;
+                color: #fee6c2;
+            }
+        }
+    }
+    .btn {
+        float: left;
+        /* 关闭图标 */
+        a.a-close {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        /* 安装按钮 */
+        a.a-install {
+            display: block;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #fff;
+            background: #6db110;
+            border-radius: 4px;
+            text-align: center;
+            position: absolute;
+            bottom: 95px;
+            right: 10px;
+        }
+    }
+}
+
+    /* 头部模块 */
+#header {
+    background-color: #fff;
+    display: flex;
+    height: .45rem /* 45/100 */;
+    padding: .1rem /* 10/100 */;
+    border-bottom: 1px solid #ccc;
+    .m-logo {
+        display: block;
+        img{
+            width: .85rem /* 85/100 */;
+        }
+    }
+    /* 搜索框 */
+    .search-bar {
+        flex: 1;
+        padding: 0 .1rem /* 10/100 */;
+        .search-input {
+            border: none;
+            height: .28rem /* 28/100 */;
+            border-radius: .14rem /* 14/100 */;
+            font-size: 14px;
+        }
+    }
+    /* 下载 */
+    .dowmload {
+        padding-top: .03rem /* 3/100 */;
+        a {
+            display: block;
+            width: .4rem /* 40/100 */;
+            height: .2rem /* 20/100 */;
+            font-size: .12rem /* 12/100 */;
+            border: .01rem /* 1/100 */ solid #ff5500;
+            color: #ff5500;
+            border-radius: .1rem /* 10/100 */;
+            text-align: center;
+            line-height: .2rem /* 20/100 */;
+        }
+
+    }
+}
+
+/* 导航模块 */
+#nav {
+    background-color: #fff;
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    a {
+        position: relative;
+        font-family: '微软雅黑';
+        font-size: 15px;
+        line-height: 40px;
+        padding: 0 10px;
+        font-weight: 700;
+        &.mui-active {
+            color: #f85f00;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 4px;
+                background: #f85f00;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%,0);
+            }
+        }
+    }
+}
+}
+
+/* 分类区域的样式 */
+#category {
+    padding-top: 1.75rem /* 175/100 */;
+    background-color: #efefef;
+    .title {
+        >li {
+            height: 100%;
+            line-height: 0.4rem;
+            width: 100%;
+            border-bottom: 0.01rem solid #ccc;
+            >a {
+                padding: 0 0.2rem;
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #000;
+                font-weight: bold;
+                font-size: 0.15rem;
+                display: flex;
+                justify-content: space-between;
+                font-family: 'Microsoft YaHei';
+                i{
+                    font-size: 0.2rem;
+                    line-height: 0.4rem;
+               }
+           }
+            .product {
+                background-color: rgb(249, 249, 249);
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                >li {
+                    width: 33.3%;
+                    border-right: 0.01rem solid #ccc;
+                    border-bottom: 0.01rem solid #ccc;
+                    >a {
+                        display: block;
+                        height: 0.4rem;
+                        font-size: 0.14rem;
+                        color: #000;
+                        font-family: 'Microsoft YaHei';
+                   }
+               }
+                &.active {
+                    height: 100%;
+               }
+           }
+       }
+   }
+}
+
+/* 底部区域 */
+
+#footer {
+    background-color: #efefef;
+    .title {
+        border-top: 0.01rem solid #ccc;
+        border-bottom: 0.01rem solid #ccc;
+        height: 0.36rem;
+        text-align: center;
+        font-size: 0.14rem;
+        display: flex;
+        .logIn {
+            line-height: 0.36rem;
+            color: #666;
+            flex: 2;
+        }
+        .register {
+            border-left: 0.01rem solid #ccc;
+            border-right: 0.01rem solid #ccc;
+            line-height: 0.36rem;
+            color: #666;
+            flex: 2;
+        }
+        .back {
+            line-height: 0.36rem;
+            color: #666;
+            flex: 3;
+            img {
+                height: 0.14rem;
+            }
+        }
+    }
+    .content {
+        padding: 0.1rem;
+        color: #666;
+        font-size: 0.12rem;
+        text-align: center;
+        a {
+            color: red;
+        }
+        span {
+            a {
+                color: #666;
+            }
+        }
+    }
+}

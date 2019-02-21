@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠价</title>
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../less/Discount.css">
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a class="fa fa-angle-left" href="../index.html"></a>
+        <h3>优惠券</h3>
+        <a class="fa fa-download">
+            <p>app下载</p>
+        </a>
+    </header>
+    <main id="main">
+        <div>
+            <a href="#" class="fenlei">
+                <img src="../images/timg.jpg" alt="">
+                <p>肯德基</p>
+            </a>
+        </div>
+    </main>
+
+
+    <script id="ssTpl" type="text/html">
+        {{each result value index}}
+        <div>
+        <a href="kdj.html?id={{value.couponId}}" class="fenlei">
+                <img src="../images/timg (1).jpg" alt="">
+                <p>{{value.couponTitle}}</p>
+            </a>
+        </div>
+            {{/each}}
+    </script>
+    <script src="../lib/mui/js/mui.js"></script>
+    <script src="../lib/zepto/zepto.min.js"></script>
+    <script src="../lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="../lib/artTemplate/template-web.js"></script>
+    <script src="../js/Discount.js"></script>
+
+</body>
+
+</html>

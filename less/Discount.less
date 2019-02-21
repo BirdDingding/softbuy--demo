@@ -1,0 +1,91 @@
+body {
+    /* Mui默认是17px */
+    font-size: .14rem;
+    box-sizing: border-box;
+    font-family: "微软雅黑"
+}
+
+/* 设置我们的html根元素来实现rem适配 */
+html {
+    /* 设置 根元素在 375屏幕下的时候 是100px   100px就是 26.66667vw */
+    font-size: 26.66667vw;
+}
+
+/* 去掉默认的间距 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    /* 解决图片和块级元素3px间隙问题 */
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    /* 设置flex主轴方向是垂直 */
+    flex-direction: column;
+    /* 推荐使用100vh 不需要给父元素html设置高度 自然和页面一样高 */
+    height: 100vh;
+    /* 使用固定的定位的方式设置padding把内容挤到中间来 */
+    /* padding: .45rem 0; */
+}
+
+#header {
+    display: flex;
+    background-color: #f4483e;
+    justify-content: space-between;
+    height: .4rem;
+    padding: 0 .2rem;
+    line-height: .4rem;
+
+    .fa-angle-left {
+        color: #fff;
+        font-size: .2rem;
+        line-height: .4rem;
+    }
+
+    h3 {
+        color: #fff;
+    }
+
+    .fa-download {
+        color: #fff;
+        font-size: .16rem;
+        padding-top: .1rem;
+        text-align: center;
+        p {
+            font-size: .1rem
+        }
+    }
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+
+    >div {
+        width: 33.33%;
+        text-align: center;
+        padding: .05rem;
+        box-sizing: border-box;
+
+        .fenlei {
+            display: block;
+            border: 1px solid #ccc;
+            padding: .1rem;
+            color: black;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+

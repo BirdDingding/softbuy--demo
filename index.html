@@ -61,7 +61,7 @@
         <div class="menu">
             <ul class="mui-row productlist ">
 
-            </ul >
+            </ul>
         </div>
         <div class="sales">
             <div class="title">
@@ -79,34 +79,26 @@
 
         </div>
     </main>
-   <!-- 底部 -->
-   <footer class="footer">
-        <div class="link">
-            <a href="#"  >登陆</a>
-            <a href="#" >注册</a>
-            <a href="#" ><i class="fa fa-arrow-circle-up"></i> 返回顶部</a>
+    <!-- 底部 -->
+    <footer id="footer">
+        <div class="footer-title">
+            <a href="#" class="left">登录</a>
+            <a href="#" class="left">注册</a>
+            <a href="#" class="right"><img src="./images/top.png" alt=""> 返回顶部</a>
         </div>
-        
-   </footer>
-   <div class="fa fa-rocket">  
-   </div>
+        <div class="footer-content">
+            <div class="down">
+                <a href="#" class="left">手机APP下载</a>
+                <a href="../index.html" class="right">慢慢买手机版 -- 掌上比价平台</a>
+            </div>
+            <div class="address">m.manmanbuy.com</div>
+        </div>
+    </footer>
+    <!-- <div class="fa fa-rocket">
+    </div> -->
 
     <script id="navlistTpl" type="text/html">
-        <!-- {{ each result value index}}
-        <div class="mui-col-xs-3 {{index==7?'one':''}} ">
-            {{if index == 7}}
-            <a href="javascript:;">
-                    {{@value.img}}
-                    <p>{{value.name}}</p>
-            </a>
-                {{else}}
-            <a href="{{value.titlehref}}">
-                {{@value.img}}
-                <p>{{value.name}}</p>
-            </a>
-            {{/if}}
-        </div>
-        {{ /each }} -->
+
         {{ each result val index }}
         <li class="mui-col-xs-3 {{ val.indexmenuId == 7 ? 'more' : ''}}" data-id='{{val.indexmenuId}}' data-href='{{val.titlehref}}'>
            {{@val.img}}

@@ -1,7 +1,12 @@
 $(function () {
     
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+
     GetBrandTop10();
     GetBrandContent();
+    GetBrandComment()
 })
 
 // 获取当前url指定参数
@@ -58,4 +63,36 @@ function GetBrandContent() {
             
         }
     });
+}
+
+// 评论部分
+function GetBrandComment() {
+    $.ajax({
+        url: "http://localhost:9090/api/getbrandproductlist",
+        data: {
+            brandtitleid: this.GetQueryString('id'),
+            pagesize: 5
+        },
+        success: function (res) {
+            var html = template('contentTitleTpl', res);
+            $('.contentTitle').html(html);
+            console.log(res);
+
+            var liList = $('.comContent li');
+            liList.each(function (index,e) {
+                var productid = $(this).data('productid');
+                $.ajax({
+                    url: "http://localhost:9090/api/getproductcom",
+                    data: {
+                        productid: productid
+                    },
+                    success: function (response) {
+                        var comHtml = template('commentConTpl',response);
+                        $('.comContent .comment').html(comHtml);
+                    }
+                });
+            })
+            
+        }
+    })
 }

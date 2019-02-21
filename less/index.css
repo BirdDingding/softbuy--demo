@@ -207,15 +207,15 @@ main {
   padding-top: 1rem;
 }
 main .menu {
-  height: 1.5rem;
+  padding: 10px 0;
+  height: 1.7rem;
   overflow: hidden;
   background-color: #fff;
-  margin-top: .2rem;
   display: flex;
   transition: .5s;
 }
 main .menu.active {
-  height: 1.5rem;
+  height: 2.5rem;
 }
 main .menu .productlist {
   top: .1rem;
@@ -229,6 +229,7 @@ main .menu .productlist p {
   text-align: center;
   font-size: .14rem;
   line-height: .14rem;
+  margin: 5px 0;
 }
 main .menu .productlist li {
   list-style: none;

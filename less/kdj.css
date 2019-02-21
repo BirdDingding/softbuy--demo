@@ -1,0 +1,128 @@
+body {
+  /* Mui默认是17px */
+  font-size: .14rem;
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+}
+/* 设置我们的html根元素来实现rem适配 */
+html {
+  /* 设置 根元素在 375屏幕下的时候 是100px   100px就是 26.66667vw */
+  font-size: 26.66667vw;
+}
+/* 去掉默认的间距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  /* 解决图片和块级元素3px间隙问题 */
+  vertical-align: middle;
+}
+body {
+  display: flex;
+  /* 设置flex主轴方向是垂直 */
+  flex-direction: column;
+  /* 推荐使用100vh 不需要给父元素html设置高度 自然和页面一样高 */
+  height: 100vh;
+  /* 使用固定的定位的方式设置padding把内容挤到中间来 */
+  /* padding: .45rem 0; */
+}
+#header {
+  display: flex;
+  background-color: #f4483e;
+  justify-content: space-between;
+  height: .4rem;
+  line-height: .4rem;
+  padding: 0 .2rem;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+#header .fa-angle-left {
+  color: #fff;
+  font-size: .2rem;
+  line-height: .4rem;
+}
+#header h3 {
+  color: #fff;
+}
+#header .fa-download {
+  color: #fff;
+  font-size: .16rem;
+  padding-top: .1rem;
+  text-align: center;
+}
+#header .fa-download p {
+  font-size: 0.1rem;
+}
+.tishi > a {
+  text-align: center;
+  color: #ccc;
+  display: block;
+  margin-top: 10px;
+  margin-top: .45rem;
+}
+#main {
+  flex: 1;
+}
+#main .details {
+  width: 100%;
+  display: flex;
+  margin-top: .1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+#main .details .left {
+  width: 1.6rem;
+  padding: .05rem;
+}
+#main .details .left img {
+  width: 100%;
+  background-color: red;
+}
+#main .details .right {
+  color: black;
+  flex: 1;
+  font-size: .11rem;
+  padding: .1rem;
+  box-sizing: border-box;
+}
+#main .details .right p {
+  margin-top: .05rem;
+}
+#main .details .right .shijian {
+  color: orange;
+  font-size: .10rem;
+}
+#main .details .fa-angle-right {
+  font-size: .4rem;
+  margin-top: .3rem;
+  color: #ccc;
+  width: 0.2rem;
+}
+.mui-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#myCarousel {
+  display: none;
+  z-index: 9999;
+  width: 3rem;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#myCarousel .item img {
+  width: 100%;
+}

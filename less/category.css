@@ -1,0 +1,536 @@
+/*引入基本样式*/
+html {
+  /*定义主色调*/
+  color: #333;
+  /*定义主背景*/
+  background: #F6F6F6;
+  /*如果有溢出自动形成滚动条*/
+  overflow-y: auto;
+  /*不想让iPhone横坚屏切换的时候调节文字*/
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 定义根元素大小 */
+  font-size: 26.666667vw;
+}
+html * {
+  /*所有元素*/
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*去除移动端开发点击事件灰色背景如a标签*/
+}
+body,
+html {
+  height: 100%;
+}
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: none;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+ol,
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:after,
+q:before {
+  /*在<q></q>标签之间的文字两头加上引号*/
+  content: '';
+}
+a {
+  text-decoration: none;
+}
+/*input*/
+button {
+  border: none;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  /*渲染成button的风格*/
+  text-transform: none;
+  outline: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+  /*输入框提示语的字体样式*/
+}
+input::-webkit-inner-spin-button {
+  /*解决input的type="number"在部分手机端会出现一个小按钮*/
+  -webkit-appearance: none;
+  /*去除系统默认appearance的样式,常用于IOS下移除原生样式*/
+}
+input::-webkit-outer-spin-button {
+  /*解决input的type="number"在部分手机端会出现一个小按钮*/
+  -webkit-appearance: none;
+}
+textarea {
+  vertical-align: top;
+}
+button,
+input {
+  line-height: normal;
+}
+select {
+  margin: 0;
+  outline: 0;
+}
+input.fixAKeyboard:focus,
+textarea.fixAndroidKeyboard:focus {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-modify: read-write-plaintext-only;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+button,
+input[type=button],
+input[type=checkbox],
+input[type=reset],
+input[type=submit],
+label {
+  cursor: pointer;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+input[type=submit] {
+  -webkit-user-modify: read-plaintext-only;
+  -moz-user-modify: read-plaintext-only;
+  -ms-user-modify: read-plaintext-only;
+  -o-user-modify: read-plaintext-only;
+  user-modify: read-plaintext-only;
+}
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+input[type='search'] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+/*flex box*/
+.flex {
+  display: box;
+  /* OLD - Android 4.4- */
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  -webkit-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.justify-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.justify-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  /*所有元素以border开始计算盒子大小*/
+}
+.clearfix:after,
+.clearfix:before {
+  /*清除浮动*/
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 底部广告样式 */
+.app-promotion-bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #faf8f5;
+}
+.app-promotion-bar .closefix {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 21px;
+  height: 21px;
+  /* padding: 19px 12px 20px; */
+  margin: -13px 10px 10px;
+  background-image: url(../images/appbar-close.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 21px;
+}
+.app-promotion-bar .icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 41px;
+  height: 41px;
+  margin: auto;
+  background-image: url(../images/logo.jpg);
+  background-position: center;
+  background-size: 41px;
+}
+.app-promotion-bar p {
+  margin-left: 67px;
+  margin-right: 84px;
+  line-height: 1;
+}
+.app-promotion-bar .titlefix {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #888;
+}
+.app-promotion-bar .describe {
+  margin-top: 3px;
+  font-size: 14px;
+  color: #999;
+}
+.app-promotion-bar .download-btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 74px;
+  height: 30px;
+  padding-top: 10px;
+  margin: auto;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+  background-color: #ff7700;
+  border-radius: 4px;
+  box-shadow: inset 0 -2px #ff5500;
+  text-decoration: none;
+}
+#top {
+  position: fixed;
+  z-index: 999;
+  /* 头部广告样式 */
+  /* 头部模块 */
+  /* 导航模块 */
+}
+#top .appbanner {
+  background: #434343;
+  position: reative;
+  height: 85px;
+  padding: 10px;
+}
+#top .appbanner .applogo {
+  float: left;
+}
+#top .appbanner .applogo img {
+  width: 64px;
+}
+#top .appbanner .tit {
+  float: left;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+}
+#top .appbanner .tit .subtit {
+  margin-top: 4px;
+}
+#top .appbanner .tit .subtit p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #fee6c2;
+}
+#top .appbanner .btn {
+  float: left;
+  /* 关闭图标 */
+  /* 安装按钮 */
+}
+#top .appbanner .btn a.a-close {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#top .appbanner .btn a.a-install {
+  display: block;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  background: #6db110;
+  border-radius: 4px;
+  text-align: center;
+  position: absolute;
+  bottom: 95px;
+  right: 10px;
+}
+#top #header {
+  background-color: #fff;
+  display: flex;
+  height: 0.45rem /* 45/100 */;
+  padding: 0.1rem /* 10/100 */;
+  border-bottom: 1px solid #ccc;
+  /* 搜索框 */
+  /* 下载 */
+}
+#top #header .m-logo {
+  display: block;
+}
+#top #header .m-logo img {
+  width: 0.85rem /* 85/100 */;
+}
+#top #header .search-bar {
+  flex: 1;
+  padding: 0 0.1rem /* 10/100 */;
+}
+#top #header .search-bar .search-input {
+  border: none;
+  height: 0.28rem /* 28/100 */;
+  border-radius: 0.14rem /* 14/100 */;
+  font-size: 14px;
+}
+#top #header .dowmload {
+  padding-top: 0.03rem /* 3/100 */;
+}
+#top #header .dowmload a {
+  display: block;
+  width: 0.4rem /* 40/100 */;
+  height: 0.2rem /* 20/100 */;
+  font-size: 0.12rem /* 12/100 */;
+  border: 0.01rem /* 1/100 */ solid #ff5500;
+  color: #ff5500;
+  border-radius: 0.1rem /* 10/100 */;
+  text-align: center;
+  line-height: 0.2rem /* 20/100 */;
+}
+#top #nav {
+  background-color: #fff;
+  position: relative;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+#top #nav a {
+  position: relative;
+  font-family: '微软雅黑';
+  font-size: 15px;
+  line-height: 40px;
+  padding: 0 10px;
+  font-weight: 700;
+}
+#top #nav a.mui-active {
+  color: #f85f00;
+}
+#top #nav a.mui-active::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 4px;
+  background: #f85f00;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+/* 分类区域的样式 */
+#category {
+  padding-top: 1.75rem /* 175/100 */;
+  background-color: #efefef;
+}
+#category .title > li {
+  height: 100%;
+  line-height: 0.4rem;
+  width: 100%;
+  border-bottom: 0.01rem solid #ccc;
+}
+#category .title > li > a {
+  padding: 0 0.2rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.15rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Microsoft YaHei';
+}
+#category .title > li > a i {
+  font-size: 0.2rem;
+  line-height: 0.4rem;
+}
+#category .title > li .product {
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#category .title > li .product > li {
+  width: 33.3%;
+  border-right: 0.01rem solid #ccc;
+  border-bottom: 0.01rem solid #ccc;
+}
+#category .title > li .product > li > a {
+  display: block;
+  height: 0.4rem;
+  font-size: 0.14rem;
+  color: #000;
+  font-family: 'Microsoft YaHei';
+}
+#category .title > li .product.active {
+  height: 100%;
+}
+/* 底部区域 */
+#footer {
+  background-color: #efefef;
+}
+#footer .title {
+  border-top: 0.01rem solid #ccc;
+  border-bottom: 0.01rem solid #ccc;
+  height: 0.36rem;
+  text-align: center;
+  font-size: 0.14rem;
+  display: flex;
+}
+#footer .title .logIn {
+  line-height: 0.36rem;
+  color: #666;
+  flex: 2;
+}
+#footer .title .register {
+  border-left: 0.01rem solid #ccc;
+  border-right: 0.01rem solid #ccc;
+  line-height: 0.36rem;
+  color: #666;
+  flex: 2;
+}
+#footer .title .back {
+  line-height: 0.36rem;
+  color: #666;
+  flex: 3;
+}
+#footer .title .back img {
+  height: 0.14rem;
+}
+#footer .content {
+  padding: 0.1rem;
+  color: #666;
+  font-size: 0.12rem;
+  text-align: center;
+}
+#footer .content a {
+  color: red;
+}
+#footer .content span a {
+  color: #666;
+}

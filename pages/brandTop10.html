@@ -27,42 +27,38 @@
     </header>
 
     <main id="main">
-        <section id="charst">
-            <div class="title">
-                <span class="changename">平板电视</span><span>哪个好，十大品牌排行榜</span>
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <section id="charst">
+                    <div class="title">
+                        <span class="changename">平板电视</span><span>哪个好，十大品牌排行榜</span>
+                    </div>
+                    <div id="brand-list">
+                        <ul class="mui-table-view top10list">
+                        </ul>
+                    </div>
+                </section>
+                <section id="goods">
+                    <div class="title" id="saletitle">
+                        <span class="changename">平板电视销量排行</span>
+                    </div>
+                    <div id="goodslist">
+                        <ul class="mui-table-view saleList">
+                        </ul>
+                    </div>
+                </section>
+                <section id="commentlist">
+                    <div class="title" id="comtitle">
+                        <span class="changename">平板电视最新评论</span>
+                    </div>
+                    <div class="comContent">
+                        <ul class="mui-table-view contentTitle">
+                        </ul>
+                    </div>
+                </section>
             </div>
-            <div id="brand-list">
-                <ul class="mui-table-view top10list">
-                </ul>
-            </div>
-        </section>
-        <section id="goods">
-            <div class="title" id="saletitle">
-                <span class="changename">平板电视销量排行</span>
-            </div>
-            <div id="goodslist">
-                <ul class="mui-table-view saleList">
-                </ul>
-            </div>
-        </section>
-        <section id="commentlist">
-            <div class="title" id="comtitle">
-                <span class="changename">平板电视最新评论</span>
-            </div>
-            <div class="comContent">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell mui-media">
-                        <a href="javascript:;">
-                            <img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
-                            <div class="mui-media-body">
-                                LG 49LF5400 49英寸 全高清 普通LED液晶电视
-                            </div>
-                        </a>
-                        div
-                    </li>
-                </ul>
-            </div>
-        </section>
+        </div>
 
     </main>
     <footer id="footer">
@@ -131,6 +127,38 @@
             </li>
         {{ /each }}
     </script>
+
+    <script type="text/html" id="contentTitleTpl">
+        {{ each result value index }}
+            <li class="mui-table-view-cell mui-media " data-productid="{{value.productId}}">
+                <a href="javascript:;">
+                    <div class="mui-media-object mui-pull-left imgBox">
+                        {{@value.productImg}}
+                    </div>
+                    <div class="mui-media-body">
+                        {{ value.productName }}
+                    </div>
+                </a>
+                <div class="comment">
+                        
+                </div>
+            </li>
+        {{ /each }}
+    </script>
+
+    <script type="text/html" id="commentConTpl">
+        {{ each result value index }}
+            <div class="content">
+                <div class="comInfo">
+                    <span class="user">{{value.comName}}</span>
+                    <span class="time">{{value.comTime}}</span>
+                </div>
+                <p>
+                    {{value.comContent}}
+                </p>
+            </div>
+            {{ /each }}
+        </script>
     <!-- 1. 引入Mui的js文件 需要使用MUi一些JS功能 弹框 轮播图 滚动等 -->
     <script src="../lib/mui/js/mui.js"></script>
     <!-- 2. 引入一个zepto 是用来给 获取元素 添加事件 发送请求之类操作 -->

@@ -6,7 +6,7 @@ $(function () {
     });
     $('.menu').on('tap', '.one', function () {
         $('.menu').toggleClass('active');
-
+        
     })
 
 
@@ -25,8 +25,17 @@ $(function () {
     // 对头部进行注册点击跳转事件 
     $('.productlist').on('tap', 'li', function () {
         var href = $(this).data('href');
-        console.log(href);
-        if (href == 'history.html' || href == 'more.html') {
+        // console.log(href);
+        if (href == 'history.html') {
+            return false;
+        }
+        else if (href == 'more.html') {
+            
+            // $('.productlist').on('tap', '.more', function () {
+                // console.log($(this));
+                $('.menu').toggleClass('active');
+            // });
+            // console.log(123);
             return false;
         }
         // 进行跳转
@@ -47,4 +56,9 @@ $(function () {
 
 
 
+    function more() {
+        $('.menu').on('tap', '.one', function () {
+            $('.menu').toggleClass('active');
+        });
+    }
 })

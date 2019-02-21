@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置移动端视口 -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>比价搜索</title>
+    <!-- 1.引入mui.css样式文件 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <!-- 2.引入字体图标样式文件 -->
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+    <!-- 3.引入自己的样式文件 -->
+    <link rel="stylesheet/less" href="../less/category.less">
+    <!-- 4.引入less编译器文件 -->
+    <script src="../lib/less/less.js"></script>
+</head>
+
+<body>
+
+    <div id="top">
+        <!-- 头部广告 -->
+        <div class="appbanner">
+            <div class="applogo">
+                <img src="../images/logo.jpg" alt="">
+            </div>
+            <div class="tit">
+                慢慢买比价客户端
+                <div class="subtit">
+                    <p>掌控价格不再买贵</p>
+                    <p>500万人正在使用</p>
+                </div>
+            </div>
+            <div class="btn">
+                <a href="javascript:;" class="a-close"></a>
+                <a href="javascript:;" class="a-install">立即安装</a>
+            </div>
+        </div>
+        <!-- 头部模块 -->
+        <header id="header">
+            <a href="../index.html" class="m-logo">
+                <img src="../images/mlogo.png" alt="慢慢买">
+            </a>
+            <form action="" class="search-bar">
+                <input class="search-input" type="text" placeholder="商品比价、查历史价">
+            </form>
+            <div class="dowmload">
+                <a href="javascript:;">下载</a>
+            </div>
+        </header>
+        <!-- 头部导航 -->
+        <nav id="nav">
+            <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="mui-scroll">
+                    <a class="mui-control-item">
+                        首页
+                    </a>
+                    <a class="mui-control-item">
+                        省钱控
+                    </a>
+                    <a class="mui-control-item">
+                        查历史价
+                    </a>
+                    <a class="mui-control-item mui-active">
+                        比价搜索
+                    </a>
+                    <a class="mui-control-item">
+                        国内折扣
+                    </a>
+                    <a class="mui-control-item">
+                        白菜价
+                    </a>
+                    <a class="mui-control-item">
+                        小时风云榜
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- 主体模块 -->
+    <!-- 分类区域 -->
+    <section id="category">
+        <ul class="title">
+
+        </ul>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="title">
+            <a href="#" class="logIn">登录</a>
+            <a href="#" class="register">注册</a>
+            <a href="#" class="back"><img src="http://www.zuyushop.com/wap/images/top.jpg" alt=""> 返回顶部</a>
+        </div>
+        <div class="content">
+            <a href="#">手机APP下载</a>
+            <span>
+                慢慢买手机版 <a href="#">
+                    -- 掌上比价平台
+                </a></span>
+            <p>
+                m.manmanbuy.com </p>
+        </div>
+    </footer>
+    <!-- 底部广告 -->
+    <div class="app-promotion-bar"> <a class="closefix" href="javascript:;"></a>
+        <div class="icon"></div>
+        <p class="titlefix">实时更新品牌榜</p>
+        <p class="describe">全网比价不吃亏</p>
+        <a class="download-btn" href="javascript:;">立即打开</a>
+    </div>
+    <!-- 创建分类标题模块 -->
+    <script type="text/html" id="categoryTitleTpl">
+        {{ each result value }}
+            <li>
+                <a href="javascript:void(0)" data-id=" {{ value.titleId }} "class="secondCategory">
+                    <span> {{ value.title }} </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="product">
+               
+                </ul>
+            </li>
+        {{ /each}}
+    </script>
+    <!-- 创建分类内容模块 -->
+    <script type="text/html" id="categorySecondTpl">
+        {{ each result value }}
+            <li>
+                <a href="productList.html?categoryId={{ value.categoryId }}" data-id=" {{ value.titleId }} ">
+                    <span> {{ value.category }} </span>
+                </a>
+            </li>   
+        {{ /each}}
+    </script>
+
+    <!-- 引入jquery.js文件 -->
+    <script src="../lib/zepto/zepto.min.js"></script>
+    <!-- 引入我们需要的插件mui.js -->
+    <script src="../lib/mui/js/mui.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="../lib/artTemplate/template-web.js"></script>
+    <!-- 引入我们自己的js文件 -->
+    <script src="../js/category.js"></script>
+</body>
+
+</html>
